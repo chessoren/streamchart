@@ -1,0 +1,243 @@
+<!doctype html><html><head><meta charset="utf-8"><title>StreamChart — Devpost submission</title><style>
+@font-face{font-family:Inter;src:url(brand/inter.woff2) format('woff2');font-weight:100 900}
+@page{size:A4;margin:16mm 16mm 18mm}
+body{font-family:Inter,sans-serif;color:#1b2333;font-size:10.5pt;line-height:1.55}
+h1{font-size:30pt;letter-spacing:-.03em;margin:0} h2{font-size:16pt;color:#111a2b;margin:22pt 0 6pt;letter-spacing:-.02em} h3{font-size:12pt;margin:14pt 0 4pt;color:#111a2b}
+.cover{height:250mm;display:flex;flex-direction:column;justify-content:center;page-break-after:always}
+.cover img{width:60mm;border-radius:50%}
+.tag{display:inline-block;background:#e8efff;color:#3b6ef6;border-radius:6px;padding:1pt 6pt;margin:2pt;font-size:9pt;font-weight:600}
+table{border-collapse:collapse;width:100%;font-size:9.5pt;margin:6pt 0} td,th{border-bottom:1px solid #e2e8f1;padding:4pt 6pt;text-align:left;vertical-align:top} th{color:#6b778c;font-weight:600}
+.box{background:#f4f7fb;border:1px solid #e2e8f1;border-radius:8pt;padding:10pt 12pt;margin:8pt 0}
+a{color:#3b6ef6;text-decoration:none} .k{color:#6b778c;font-size:9pt;text-transform:uppercase;letter-spacing:.08em;font-weight:600}
+.pb{page-break-before:always} img.full{width:100%;border-radius:6pt;border:1px solid #e2e8f1;margin:6pt 0 2pt} .cap{font-size:8.5pt;color:#6b778c;margin-bottom:10pt}
+blockquote{margin:6pt 0;padding:6pt 12pt;border-left:3pt solid #3b6ef6;background:#f4f7fb}
+</style></head><body>
+<div class="cover">
+<img src="logo/streamchart-logo-1024.png">
+<div class="k" style="margin-top:14mm">OneAquaHealth IEEE Global Hackathon 2026 · Track 7 Digital Health Standards</div>
+<h1 style="font-size:44pt;margin-top:4mm">StreamChart</h1>
+<p style="font-size:18pt;color:#3b6ef6;margin:4mm 0">Every patient has a chart. Now every stream does.</p>
+<p style="font-size:11pt;color:#56627a;max-width:150mm">A 60-second citizen check-up, a sealed AI second look, confidence grades, a care plan signed by an ecologist, and a reply. In FHIR R4.</p>
+<p style="margin-top:10mm">Live app: <a href="https://streamchart-oneaquahealth.netlify.app">streamchart-oneaquahealth.netlify.app</a><br>Code: <a href="https://github.com/chessoren/streamchart">github.com/chessoren/streamchart</a></p>
+</div>
+<h2>Submission fields</h2>
+<div class="box"><b>Project name</b><br>StreamChart</div>
+<div class="box"><b>Elevator pitch</b><br>Every patient has a chart. Now every stream does: a 60-second citizen check-up, a sealed AI second look, confidence grades, a care plan signed by an ecologist, and a reply. In FHIR R4.</div>
+<div class="box"><b>Track</b><br>Track 7 — Digital Health Standards (also covers Tracks 3, 2, 5, 4 and 6).</div>
+<div class="box"><b>Built with</b><br><span class="tag">react</span><span class="tag">typescript</span><span class="tag">vite</span><span class="tag">gemini</span><span class="tag">google-ai-studio</span><span class="tag">gemini-vision</span><span class="tag">structured-output</span><span class="tag">hl7-fhir</span><span class="tag">fhir-r4</span><span class="tag">hapi-fhir</span><span class="tag">open-meteo</span><span class="tag">sha-256</span><span class="tag">commit-reveal</span><span class="tag">css3</span><span class="tag">html5</span><span class="tag">lucide</span><span class="tag">qrcode</span><span class="tag">playwright</span><span class="tag">vitest</span><span class="tag">netlify</span><span class="tag">github</span><span class="tag">fish-audio</span><span class="tag">ffmpeg</span><span class="tag">wikimedia-commons</span><span class="tag">claude-code</span></div>
+<div class="box"><b>Try it out</b><br>
+Live app — <a href="https://streamchart-oneaquahealth.netlify.app">https://streamchart-oneaquahealth.netlify.app</a><br>
+Source code — <a href="https://github.com/chessoren/streamchart">https://github.com/chessoren/streamchart</a><br>
+Emergency scene — <a href="https://streamchart-oneaquahealth.netlify.app/#/simulation">https://streamchart-oneaquahealth.netlify.app/#/simulation</a><br>
+A stream on the public HAPI FHIR R4 server — <a href="https://hapi.fhir.org/baseR4/Patient/81129">https://hapi.fhir.org/baseR4/Patient/81129</a><br>
+Demo video — StreamChart-demo.mp4 (4 min 28 s, English subtitles)</div>
+<h2 class="pb">About the project</h2>
+<p><strong>Every patient has a chart. Now every stream does.</strong></p>
+<p><em>Track 7, Digital Health Standards (primary). The project also covers Track 3 (AI-supported assessment), Track 2 (data-to-insight), Track 5 (community and engagement), Track 4 (storytelling) and Track 6 (early warning).</em></p>
+<hr />
+<h2>Inspiration</h2>
+<p>There is a stream at the bottom of a path that thousands of people walk past every week. They see it without looking at it. In August a white foam gathers against a stone, and nobody says anything. The foam is not hidden, people just assume someone else has already noticed. When somebody finally does say something, the observation goes into a form, the form goes into a database, and the person who took the trouble never hears about it again. The next time they see foam, they don't bother.</p>
+<p>That is the quiet failure at the heart of urban citizen science. It isn't a lack of goodwill. When the OneAquaHealth project asked for help, people downloaded the app, walked to their streams and answered the questions. The failure comes after: nothing comes back. The hackathon's Track 5 names it plainly as <em>low repeat engagement</em>. Track 3 names the other side of the same coin: <em>citizen observations can be inconsistent and error-prone</em>, so authorities hesitate to act on them. Volunteers stop contributing because nothing visible happens, and nothing happens partly because nobody trusts the data. Each problem keeps the other going.</p>
+<p>When I read through what OneAquaHealth has built over the last few years, I was struck by how complete it already is. It has a citizen science app with standardised indicators, dashboards for five research cities (Benevento, Coimbra, Ghent, Oslo, Toulouse), a resilience map crossing biodiversity, weather, pathogens and satellite data, the GEOSSIP data-sharing platform, a decision-support system that goes from indicators to likely alterations to stressors to restoration measures, DipteraCAST for forecasting mosquitoes and other dipterans, and a carefully written Catalogue of Measures. In medical terms, the project has built every organ of a health system for urban streams.</p>
+<p>What it hasn't built is the patient.</p>
+<p>Every one of those tools answers a useful question: what do we see, what do we predict, what should we do. None of them answers the question a resident actually asks: <em>what is happening to my stream, and did what I did make any difference?</em></p>
+<p>Medicine faced exactly this problem more than a century ago, and solved it with three inventions we now take for granted. The <strong>medical record</strong> keeps the story of one patient over time. <strong>Levels of evidence</strong> say how far each piece of information can be trusted. The <strong>care loop</strong> connects a symptom to a diagnosis, to a prescription, to a follow-up visit, and finally to recovery. A modern hospital isn't impressive because of any one machine. It works because every machine writes into the same chart, and every chart has a doctor who signs it.</p>
+<p>An urban stream is a patient that has never had a chart, a doctor or a follow-up visit. So the idea was simple, maybe obviously so once said out loud: <strong>give every stream a medical record, and run citizen science as a care loop.</strong> The hackathon's tagline is <em>from streams to systems</em>. StreamChart adds the missing link in the middle: <em>from streams, to patients, to systems.</em></p>
+<p>I come from theatre. In theatre you learn quickly that an audience doesn't remember features, it remembers a character. I wanted the stream to become one: a patient with a name, a state, a history and even a voice, without ever losing the scientific rigour that the people who built OneAquaHealth have every right to expect. The emotion I aimed for is what I'd call <em>serious tenderness</em>. The tenderness comes from a stream that says “nobody has looked at me for nineteen days”. The seriousness comes from confidence grades, co-signatures and provenance on every fact.</p>
+<h2>What it does</h2>
+<p>StreamChart is a working web application, live at <strong>https://streamchart-oneaquahealth.netlify.app</strong>, built around one consistent translation from medicine to streams:</p>
+<table>
+<thead>
+<tr>
+<th>Medicine</th>
+<th>StreamChart</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Patient</td>
+<td>A stream reach, short enough to be described in one look</td>
+</tr>
+<tr>
+<td>Medical record</td>
+<td>The stream's chart: check-ups, photos, hypotheses, care, outcomes</td>
+</tr>
+<tr>
+<td>Consultation</td>
+<td>A 60-second check-up on the bank</td>
+</tr>
+<tr>
+<td>Symptom</td>
+<td>An abnormal observation: foam, colour, odour, stagnant water, eroding banks</td>
+</tr>
+<tr>
+<td>Vital signs</td>
+<td>Background measures the project already collects (temperature, water quality, weather)</td>
+</tr>
+<tr>
+<td>Laboratory test</td>
+<td>Specialised analyses, such as a DipteraCAST prediction or an expert identification</td>
+</tr>
+<tr>
+<td>Diagnosis</td>
+<td>A <em>hypothesis</em>, always with a confidence level</td>
+</tr>
+<tr>
+<td>Level of evidence</td>
+<td>A confidence grade from A to D on every fact</td>
+</tr>
+<tr>
+<td>Prescription</td>
+<td>A care plan made of measures from the OneAquaHealth catalogue</td>
+</tr>
+<tr>
+<td>Doctor's signature</td>
+<td>Co-signature by a referent ecologist</td>
+</tr>
+<tr>
+<td>Follow-up visit</td>
+<td>A follow-up check-up from the same viewpoint</td>
+</tr>
+<tr>
+<td>Recovery</td>
+<td>Remission</td>
+</tr>
+<tr>
+<td>Care team</td>
+<td>The residents, schools and associations that follow the stream</td>
+</tr>
+</tbody>
+</table>
+<p>Four rules keep the metaphor honest, and the code enforces all of them. We say <em>hypothesis</em>, never <em>diagnosis</em>. Nothing is <em>validated</em> until a competent human has signed it. We never dramatise: a stream under watch is not dying. And we never accuse anyone: the record describes states and plausible causes, never culprits.</p>
+<p>Each stream is always in one of four states, visible on the map and at the top of its chart: <strong>not followed</strong> (nobody has looked for more than two weeks, which is the saddest state of all), <strong>stable</strong>, <strong>under watch</strong> (one or more signs deserve a second look) and <strong>alert</strong> (several concordant signs, plus a risk for the environment or for people). There is also a fifth moment, which is a celebration rather than a state: <strong>remission</strong>, when a stream that was in alert comes back to stable after care.</p>
+<p>The loop has five steps.</p>
+<h3>1. Triage: the 60-second check-up, with a sealed AI second look</h3>
+<p>A resident scans the sign at the foot of the stream, or opens the app. The stream introduces itself, and if nobody has visited for a while, it says so: <em>“Nobody has looked at me for nineteen days.”</em> A safety reminder comes first: observe from the bank, never step into fast or deep water, children come with an adult.</p>
+<p>The resident takes one photo and answers seven questions with very large buttons. The questions follow the OneAquaHealth citizen indicators that can be judged with the naked eye and no equipment: water clarity and colour, foam, odour, flow, banks and bed, riparian vegetation, and litter. Each question comes in <strong>three language levels</strong>, chosen with a switch: <em>Child</em> (“the water looks like dirty milk”), <em>Curious</em> (“cloudy, with whitish deposits”) and <em>Expert</em> (“elevated turbidity”). The underlying information is identical; only the vocabulary changes, and technical terms open a one-line explanation. This answers Track 1's request to simplify ecological terms without dumbing down the data.</p>
+<p>Most AI applications show their answer immediately, and people accept it without thinking. At that point the observation is no longer human. StreamChart does the opposite, and this is the mechanism I'm proudest of. <strong>The citizen answers first.</strong> While they answer, Google's Gemini vision model looks at the same photo. It never sees the citizen's answers, and its own answer is <strong>sealed</strong>: hashed with SHA-256 the moment it arrives and kept hidden. The citizen then seals their check-up with a deliberately solemn button, <em>“I confirm my check-up”</em>, and a small stamp animation. Their answers are hashed too. Only then is the AI's answer revealed. It is a commit–reveal protocol, the same idea used in sealed-bid auctions and blockchain voting, applied to a citizen and an AI looking at the same stream.</p>
+<p>The reveal is a comparison, not a correction. The two answers sit side by side, field by field. Agreements get a discreet green mark. Disagreements are highlighted, and the AI's observations are drawn as boxes on the photo with a plain sentence, such as <em>“Here: man-made concrete retaining wall framing the water body.”</em> For each disagreement the citizen chooses: <strong>keep my answer</strong>, <strong>adopt the AI's</strong>, or <strong>ask for a second opinion</strong>. The last word always belongs to the human.</p>
+<p>The AI is allowed to say “I don't know”, and it uses that right. It answers <em>unsure</em> whenever the photo doesn't let it judge, and it is hard-wired to answer <em>unsure</em> for odour, because a photo cannot carry a smell. Ecologists will notice that detail, and I think it is one of the things that shows we understand the science.</p>
+<p>Finally, the citizen immediately sees what their check-up changed: the stream moves from <em>not followed</em> to <em>under watch</em>, or their check-up joins a neighbour's and raises its grade. Nobody leaves without a reply.</p>
+<h3>2. The record: the stream's chart</h3>
+<p>The chart is the screen that carries the whole idea. It reads like a hospital record with the warmth of a personal page:</p>
+<ul>
+<li><strong>Identity:</strong> name, city, district, length of the reach, surroundings, date of the last visit, a photo, and a state badge, followed by one sentence in everyday language: <em>“Trois Ponts brook is not doing well: several signs agree. Three people have looked at it this week.”</em></li>
+<li><strong>The pulse:</strong> a heartbeat-like trace drawn from the stream's state over four months, with a blip for each check-up. One glance tells you whether it is recovering, relapsing or asleep.</li>
+<li><strong>The life of the stream:</strong> a timeline, most recent first, of check-ups (with the photo and how each was compared with the AI), background measures, hypotheses, the health indication, care plans and signatures, interventions, follow-up visits and remissions. Each entry carries its author and its confidence grade.</li>
+<li><strong>The care team:</strong> small avatars with pseudonyms and roles that tell a story without ranking anyone: the <em>sentinel</em> who reported first, the <em>vigil</em> who comes back regularly, the <em>scout</em> whose eye is often closest to the consensus, <em>the class</em> that adopted the stream, and the referent ecologist.</li>
+<li><strong>Details for experts:</strong> the current findings with their grades and the reasons for each grade, the grading rules, the seals of the latest check-ups, and the HL7 FHIR export.</li>
+</ul>
+<p>The chart works on a phone, a ten-year-old can read it, and an ecologist can take it seriously. Anything that doesn't help understand the state, the history or the next action stays in the expert details.</p>
+<h3>3. Assessment: confidence grades, hypotheses and a seven-day health indication</h3>
+<p>StreamChart doesn't claim to tell the truth about a stream. It says <strong>what can reasonably be thought, and how far that can be trusted.</strong></p>
+<p>Every finding carries a <strong>confidence grade</strong>, modelled on levels of evidence in medicine:</p>
+<ul>
+<li><strong>A:</strong> solid. There is a photo, the person and the AI agree, and others corroborate, or an expert has validated it.</li>
+<li><strong>B:</strong> reliable. A photo with person–AI agreement, or two concordant people.</li>
+<li><strong>C:</strong> plausible but isolated. One person, or an unresolved disagreement.</li>
+<li><strong>D:</strong> fragile. No photo, imprecise, or contradicted.</li>
+</ul>
+<p>The grade is a property of the information, not a judgement of the person. It moves over time. Mathis reports foam on his own: grade B (photo, plus agreement with the AI). His report of an odour is grade C, because only one nose was there and a photo can't confirm a smell. The next day Léa reports the same thing, and the odour climbs to B. When the referent ecologist signs the care plan, the findings she relied on reach A. Watching a grade rise is one of the most satisfying moments in the product: the community becomes more credible than the sum of its parts. Disagreements are never smoothed away. A contradiction within a week is shown and lowers the grade.</p>
+<p>When several symptoms combine, the engine proposes one or two <strong>hypotheses</strong>, never a certainty. For example: <em>“Possible input of wastewater or polluted runoff — confidence medium.”</em> Each hypothesis lists its reasons (persistent foam reported by two people, unusual odour, cloudy water), offers a <em>Why?</em> button that opens the underlying check-ups and their grades, and says what would confirm it: <em>“a visit by the referent ecologist, or a water-quality measurement upstream.”</em> The wording always speaks of probability, never of blame.</p>
+<p>Then comes the bridge from ecosystem to human health, the heart of One Health. The system crosses observed symptoms with a <strong>live seven-day weather forecast from Open-Meteo</strong>. If stagnant water has been reported and several hot days are forecast, the chart shows an <em>indication</em>: <em>“Conditions favourable to mosquito proliferation over the next 7 days.”</em> The indication comes with its reasons, the forecast it used, a reassessment date, and the explicit note <em>“indication, not an epidemiological forecast.”</em> The current rule is transparent and deliberately simple. The chart already has a slot, labelled as a laboratory analysis, ready to receive predictions from the project's own DipteraCAST tool.</p>
+<h3>4. Treatment: a care plan co-signed by a human</h3>
+<p>A diagnosis without treatment is a worry, not a system. When a stream goes into alert, the system proposes a <strong>care plan</strong> of at most five lines. StreamChart doesn't invent measures: each line is a measure from the <strong>OneAquaHealth D2.4 Catalogue of measures for urban aquatic ecosystems rehabilitation</strong>, quoted with its real section number and title (for example <em>§4.2.2 Sewer system and point-source improvements</em>, <em>§4.2.3 Litter, plastic, and hydrocarbon control</em>, <em>§4.1.2 Active riparian vegetation restoration</em>), its line in the catalogue's hierarchy (first line essential, second line structural, third line social, fourth line complementary), a plain-language gloss, the hypothesis it addresses, who can carry it out (the city, an association, residents, the ecologist), and its urgency and effort. Part of every plan is meant for residents themselves, such as regular check-ups or a bank clean-up, because a community that only observes eventually drifts away.</p>
+<p>Until a competent human signs, the plan is marked <strong>“proposed by the system.”</strong> Signing is the solemn moment of this step. The referent ecologist opens the file, looks at the photos, confirms or questions the hypothesis, removes any line she judges premature (with a reason that stays in the record), and presses <strong>“I validate this plan.”</strong> The band turns from <em>proposed</em> to <em>validated by Dr Ferreira, referent ecologist</em>, a stamp prints, and her name, role and date go into the record together with a SHA-256 signature hash. The system is never allowed to write “validated” on its own. Most AI projects talk about a human in the loop; StreamChart makes that human's signature the visible centre of the workflow. Sealing the check-up and signing the plan are the two solemn gestures at the two ends of the loop, and they share the same visual grammar.</p>
+<p>For city services there is a <strong>ward room</strong>: every stream in the city sorted by urgency, each with a three-line summary, the average confidence grade, the measures proposed, and three buttons: <em>open the file</em>, <em>send to the ecologist</em>, <em>plan the work</em>. The technician doesn't need to understand ecology. They need to know where to go first.</p>
+<h3>5. Follow-up: the loop closes</h3>
+<p>This is the step almost nobody builds, and it is the one that makes people come back. Without it StreamChart would be a nice reporting tool. With it, it becomes a system people want to return to. The message is simple: <em>what you do has consequences, and you get to see them.</em></p>
+<p>Every time a check-up contributes to something, the person receives a short, personal, concrete message at a precise moment:</p>
+<ul>
+<li>when it is compared: <em>“Your check-up was compared with one other from the last three weeks. It is grade C.”</em></li>
+<li>when the stream changes state: <em>“Trois Ponts brook is now under watch. Your report is the first in the chain.”</em></li>
+<li>when a plan is validated: <em>“Your check-up on Wednesday triggered an inspection. Dr Ferreira validated the care plan. A follow-up visit is planned in three weeks. You are part of its care team.”</em></li>
+<li>when an intervention is done: <em>“The city completed ‘Litter, plastic, and hydrocarbon control’. Would you take the photo again from the same spot?”</em></li>
+<li>and when the stream recovers: <em>“Trois Ponts brook is in remission. Thank you for being the first to notice.”</em></li>
+</ul>
+<p>There are no points, flames or streaks. The tone is that of a person, not a machine.</p>
+<p>A <strong>follow-up check-up</strong> after an intervention closes the episode. If it confirms the improvement, the stream goes into <strong>remission</strong> and the chart shows a <strong>recovery curve</strong> with the three dates that matter (first report, plan signed, follow-up visit) and the names of the people involved, plus a <strong>before/after slider</strong> between the first photo and the follow-up photo.</p>
+<h3>The stream's voice</h3>
+<p>The stream has a voice, and that voice is the emotional signature of the project. A <em>Listen to the stream</em> button opens a short first-person account of three to six sentences, read on screen or aloud, in the same three registers. <em>“Sunday, Mathis saw my water turning cloudy and foam near my stone. Monday, Léa saw the same, and a faint smell and still water in my side arm. Three people saw it, so it's serious. Dr Ferreira signed a care plan for me. For the first time in a long while, I know someone is taking care of me.”</em></p>
+<p>It follows one absolute rule: <strong>it never lies.</strong> Every sentence is generated from the record, and touching a sentence shows the check-up, plan or forecast it comes from. If the stream has no data, it says so. It never invents a cause, never names anyone, never gives medical or bathing advice, and never says the water is safe. That discipline is what turns the voice from a gimmick into an instrument scientists can respect. In a classroom it turns into a lesson: why does the stream sound sad? Who will go and look?</p>
+<h3>The physical world</h3>
+<p>Half of StreamChart's strength lies off the screen. The app generates a printable <strong>sign</strong> for each stream, styled like the chart clipped to a hospital bed. It shows the stream's name and current state, the sentence <em>“This stream is a patient. Take its pulse in one minute.”</em>, a QR code that opens the check-up directly, and the spot to stand on so that every photo is taken from the same viewpoint, which is what makes before/after comparisons possible. There is a <strong>one-page school kit</strong>: choose a stream near the school, four roles for the pupils (the photographer, the smell detective, the keeper of the file, the spokesperson), a 45-minute plan, and three questions to discuss back in class. Nothing to buy, nothing to install. Once a season, a city can hold a <strong>check-up day</strong> that brings every grey “not followed” stream back onto the map.</p>
+<h3>Built on standards: the chart is an HL7 FHIR R4 record (Track 7)</h3>
+<p>The medical metaphor isn't only a story; it is also a data model. Every stream's chart exports as an <strong>HL7 FHIR R4 transaction Bundle</strong>, and one button posts it to the public <strong>HAPI FHIR R4 server</strong>, which accepts it: 46 resources, 43 created and the rest matched, and the export is idempotent when re-posted.</p>
+<ul>
+<li>The stream is a <strong>Patient</strong> (carrying an extension that flags it as a non-human environmental subject) <em>and</em> a <strong>Location</strong> (its geography). This is the metaphor made literal, and a deliberate modelling decision. In R4, CarePlan, DiagnosticReport and RiskAssessment require a Patient or Group subject. Representing the reach as a Patient means any FHIR server, viewer or analytics pipeline can handle a river with no custom resource type.</li>
+<li>The 60-second form is a <strong>Questionnaire</strong>. Each check-up is a <strong>QuestionnaireResponse</strong> (carrying its seal hash), a <strong>Media</strong> for the photo, and one <strong>Observation</strong> per indicator with a confidence-grade extension, <code>derivedFrom</code> the questionnaire response and the photo, grouped in a panel Observation.</li>
+<li>The AI's look is a separate <strong>Observation</strong> produced by a <strong>Device</strong> (the model), carrying its own seal hash and a note saying whether it came from a live call or a recorded answer.</li>
+<li>A <strong>Provenance</strong> records who did what: the citizen as author, the AI as informant, with a signature carrying the seal.</li>
+<li>Each hypothesis is a <strong>DiagnosticReport</strong>: <em>preliminary</em> until signed, <em>final</em> afterwards.</li>
+<li>The seven-day indication is a <strong>RiskAssessment</strong> with a qualitative risk, a time window, its rationale and its method.</li>
+<li>The care plan is a <strong>CarePlan</strong> whose activities are coded with the D2.4 section numbers. It moves from <em>draft/proposal</em> to <em>active/plan</em> to <em>completed</em>, and removed lines become <em>cancelled</em> with the ecologist's reason. The co-signature is a <strong>Provenance</strong> with an ISO <em>Verification Signature</em> by the ecologist (<strong>Practitioner</strong>).</li>
+<li>Every reply to a citizen is a <strong>Communication</strong>.</li>
+</ul>
+<p>Demonstration data is tagged as such in <code>meta.tag</code>. For researchers, every fact carries its provenance, including the fact that an AI took part and what it answered. That is what makes these observations reusable under FAIR principles.</p>
+<h3>Who it is for</h3>
+<ul>
+<li><strong>Citizens and schools</strong> who observe, and finally hear back.</li>
+<li><strong>Ecologists</strong> who validate, and get a queue of cases sorted by difficulty, with photos, the AI's view, the citizens' view and a confidence level, so they can decide in ten seconds and sign their name to it.</li>
+<li><strong>Municipal services</strong> that prioritise and act, with a ward room that tells them where to go first.</li>
+<li><strong>Public-health actors</strong> who need early, cautious, explained signals rather than sirens.</li>
+<li><strong>Researchers</strong> who need reusable data with provenance.</li>
+<li><strong>The OneAquaHealth consortium itself</strong>, whose tools gain a common front door and a reason to be used after the project ends.</li>
+</ul>
+<h2>How I built it</h2>
+<p>StreamChart is a static single-page application in <strong>React 18 and TypeScript</strong>, built with <strong>Vite</strong>. It has no server and stores no secrets. The browser calls Google's Gemini API and Open-Meteo directly, so the app can be hosted anywhere for free. That is part of the feasibility argument: a city can fork it and run it tomorrow.</p>
+<p>The core is a <strong>pure TypeScript domain layer</strong> with no UI code, which models the medical logic of a stream:</p>
+<ul>
+<li><code>fields.ts</code> defines the check-up: the seven OneAquaHealth indicators, their options, which ones are abnormal, which ones a photo can judge, and the wording in three registers.</li>
+<li><code>engine.ts</code> holds the clinical reasoning. It consolidates check-ups from the last three weeks into <em>findings</em> and grades each one A–D with explicit rules: photo, person–AI agreement, corroboration by distinct people, the reliability of the person's eye over past check-ups, expert validation, and contradictions within a week. It then computes the state (not followed, stable, under watch, alert), the hypotheses with their confidence and reasons, the seven-day indication, the three-line ward-room summary, the pulse series, and the stream's voice, sentence by sentence with sources.</li>
+<li><code>world.ts</code> contains the actions that change the record (submit a check-up, sign a plan, record an intervention, update the forecast) and the side effects that close the loop: state-change events, hypotheses, the proposed plan, notifications, remission.</li>
+<li><code>ai.ts</code> calls <strong>Gemini vision</strong> (<code>gemini-3.5-flash-lite</code> by default, selectable in Settings) with a <strong>structured-output JSON schema</strong>. The schema forces one of the allowed values or <code>unsure</code> for each field, a confidence, a short note, and up to four observations with bounding boxes normalised to 0–1000, so they can be drawn on the photo. The prompt forbids diagnosing, naming culprits or saying the water is safe or unsafe. The response is validated, clamped, and sealed with SHA-256 over canonical JSON before anyone can see it.</li>
+<li><code>sha256.ts</code> is a small synchronous SHA-256 with canonical JSON serialisation, so seals are reproducible and the domain stays pure and testable.</li>
+<li><code>fhir.ts</code> builds the FHIR R4 transaction Bundle described above, with deterministic UUIDs and conditional creates.</li>
+<li><code>catalogue.ts</code> quotes the measures from the D2.4 catalogue with their section numbers.</li>
+</ul>
+<p>Because the domain is pure, it is covered by tests. One of them tells the brief's whole story as an automated test: a forgotten stream, Mathis's first check-up (under watch, foam at grade B, odour at grade C), Léa's concordant check-up (odour rises to B, hypothesis appears), Inès's report of stagnant water, a heatwave forecast (seven-day indication, state goes to alert, plan proposed), the ecologist's signature (findings reach grade A, every contributor notified, the voice mentions her), an intervention, and a follow-up three weeks later (stable, remission, thank-you message to the first reporter). The same test checks that the FHIR bundle contains every expected resource type.</p>
+<p><strong>AI: bring your own key.</strong> The Settings page accepts a Google AI Studio key, stored only in the user's browser and sent only to Google. Judges shouldn't need a key to see the product work, so for the eight bundled sample photos I recorded <strong>real Gemini answers</strong> in advance with a script that uses exactly the same prompt and schema as the app. Without a key, those recorded answers are replayed and <strong>labelled as recorded</strong> wherever they appear. For a user's own photo without a key, a simple offline colour analysis gives a minimal answer, again clearly labelled and never presented as AI vision.</p>
+<p><strong>Photos.</strong> I didn't want stock imagery or generated pictures pretending to be real. Every photo in the app is a <strong>real urban stream from Wikimedia Commons</strong> under a Creative Commons licence, most of them from Toulouse (the Marcaissonne, the Sausse, the Maltemps brook), credited in the app and the README. The demonstration streams use them as stand-ins, and the app says that the states shown make no claim about those places.</p>
+<p><strong>Design.</strong> The interface follows a calm, airy dashboard design system: a cool blue-grey canvas, a framed app, white glass-like cards, Inter at small sizes, a blue accent, soft status pills with icons (stable, under watch, alert, not followed), tapered confidence bars, and a single warm gradient for the most important gesture on each screen. There is a light and a dark theme. The check-up is phone-first, with very large touch targets.</p>
+<p><strong>The emergency scene.</strong> To show the whole loop within the attention span of a judge, the app includes a 60-second accelerated simulation of one week in the life of a stream. It is labelled <em>“SIMULATION — accelerated time”</em> from the first frame. The people and the heatwave are scripted, but every grade, state, hypothesis, risk, plan, signature and notification on screen is computed live by the real engine. At the end, the simulated record can be opened and explored like any other chart.</p>
+<p><strong>Tools.</strong> I used Playwright to drive the app end to end for visual QA and for the screenshots, ffmpeg to assemble the demo video, and Fish Audio for the narration. Claude Code was my pair-programmer throughout.</p>
+<h2>Challenges I ran into</h2>
+<p><strong>Keeping the metaphor honest.</strong> The medical metaphor is powerful, but it could easily slide into pretending: a “diagnosis” from a photo, a “validated” label nobody earned, an alarming red screen. I wrote four rules (hypothesis not diagnosis, a human signs, no drama, no blame) and enforced them in code, not just in copy. The system literally can't write <em>validated</em> without a signature, the voice can only speak from the record, and the health indication always carries its reassessment date and its disclaimer.</p>
+<p><strong>Designing grades that move for the right reasons.</strong> My first version treated any different answer as a contradiction, so a stream that was clear three weeks ago made today's foam look doubtful. Real streams change. I had to separate <em>contradiction</em> (a different answer within a week) from <em>history</em> (an earlier state). Odour needed its own rule, since a photo can't corroborate a smell, so a single nose stays at grade C until someone else confirms it. Expert validation had to be scoped to the fields the ecologist actually confirmed, not to everything in the same check-up.</p>
+<p><strong>Making the AI humble.</strong> A vision model asked to fill a form will happily fill every field. The structured-output schema always offers an <code>unsure</code> value, the prompt treats “unsure” as good practice, and odour is forced to <code>unsure</code>. Seeing the model answer “unsure” for water clarity when the surface was covered in foam was one of the moments where the design felt right.</p>
+<p><strong>Making the comparison trustworthy.</strong> If the citizen sees the AI's answer first, the comparison means nothing. Sealing both answers with hashes before the reveal costs almost nothing to implement, and it turns a UX intention into a verifiable property. The seals are shown in the expert details and exported in the FHIR Provenance.</p>
+<p><strong>Mapping a river onto FHIR.</strong> FHIR R4 has no resource for an ecosystem. Modelling the stream only as a Location would have been tidy, but CarePlan, DiagnosticReport and RiskAssessment need a Patient or Group subject. Representing the reach as a Patient, flagged by an extension and paired with a Location, keeps every standard workflow resource usable. I also had to make the export idempotent: the public HAPI server rejects exact duplicates, so stable resources use conditional creates on their identifiers.</p>
+<p><strong>Being honest about what is real.</strong> A demo works better when every part of it is real, but some parts can't be real in a prototype: a real ecologist's signature, weeks of follow-up, five cities competing. I chose to label every simulated element where it appears: a <em>demonstration data</em> pill in the header, a <em>simulation</em> banner on the emergency scene, <em>illustrative</em> tags on the Stream Cup, <em>role-play</em> next to the ecologist's name. There is also an <em>Honesty &amp; sources</em> page listing what is real, what is demonstration data and what we do not claim.</p>
+<h2>Accomplishments I'm proud of</h2>
+<ul>
+<li><strong>The sealed second look.</strong> Citizen first, AI sealed, comparison second, and the last word human, with verifiable hashes. It addresses Track 3's worry about AI replacing human judgement and Track 1's worry about inconsistent observations in a single gesture.</li>
+<li><strong>A co-signature you can actually see.</strong> The human in the loop isn't a sentence in a slide. It is a button, a stamp, a name in the record and a Provenance resource.</li>
+<li><strong>A loop that closes.</strong> Almost every citizen-science tool handles the observation; StreamChart handles the reply, all the way to remission and a thank-you to the first person who noticed.</li>
+<li><strong>A voice that never lies.</strong> A first-person stream that moves children and still holds up to scientific scrutiny, because every sentence links back to its source.</li>
+<li><strong>Real standards, really accepted.</strong> A FHIR R4 export that a public FHIR server accepts, with a data model that makes every fact traceable.</li>
+<li><strong>Respect for the project's own work.</strong> The indicators are OneAquaHealth's, the measures are quoted from their D2.4 catalogue with section numbers, and DipteraCAST and the DSS have a natural place in the chart. StreamChart is meant as a common front door for the tools the consortium already built, not a competitor to them.</li>
+</ul>
+<h2>What I learned</h2>
+<p>The most important feature of a citizen-science tool is the reply. A grade, a hypothesis and a dashboard are all means to one end: telling the person who looked what their looking changed. Every design decision got easier once I asked <em>what does this change for the patient, and who gets told?</em></p>
+<p>Humility can be designed. “Unsure” answers, confidence grades, a “why?” button, a reassessment date, and a disagreement shown rather than hidden all cost very little to build, and together they make a system that scientists can trust and citizens aren't intimidated by.</p>
+<p>Standards can carry a story. Expressing a stream's chart in FHIR wasn't a compliance exercise. It made the metaphor rigorous: if the stream is a patient, then the plan is a CarePlan, the signature is a Provenance and the reply is a Communication. The narrative and the data model turned out to be the same thing.</p>
+<p>Finally, the physical world matters. A sign at the foot of a stream, the same photo viewpoint every time, and a one-page school kit will probably do more for participation than any feature I could add to the app.</p>
+<h2>What's next for StreamChart</h2>
+<ul>
+<li><strong>A pilot</strong> with one school and one municipal service in one of the five research cities. Toulouse is the natural first, with signs installed on two or three real streams.</li>
+<li><strong>A validation study of the confidence grades</strong> against expert assessments: do A-grade findings hold up, and how should the rules be tuned?</li>
+<li><strong>Plugging into the OneAquaHealth tools:</strong> DipteraCAST predictions as the chart's laboratory analysis, the Decision Support System as the source of care plans, and the Citizen Science App's data model as the check-up's back end. StreamChart is designed to plug into these tools; it isn't connected to them yet.</li>
+<li><strong>Full multilingual support</strong> for the five cities (French, Portuguese, Dutch, Norwegian, Italian), plus English, using the same three-register structure.</li>
+<li><strong>The Stream Cup:</strong> a seasonal challenge between the five cities that measures what matters (share of streams followed, remissions, average grade, school participation) rather than raw volume. It is sketched in the app and labelled as roadmap.</li>
+<li><strong>An open template</strong> so that any city adopting the same indicators can publish its streams as patients.</li>
+</ul>
+<h2>Honesty: what is real, what is demonstration</h2>
+<p><strong>Real and reproducible:</strong> the 60-second check-up with your own photo or a real sample photo; the sealed comparison with the AI (live Gemini vision with your key, real recorded Gemini answers without one) and its SHA-256 seals; the confidence grades computed by displayed rules; states, hypotheses and the care-plan proposal computed by the engine; the seven-day indication reading a live Open-Meteo forecast; the co-signature and the change from <em>proposed</em> to <em>validated</em>; the replies to citizens; the stream's voice, grounded sentence by sentence; and the HL7 FHIR R4 export accepted by the public HAPI FHIR server.</p>
+<p><strong>Demonstration data, labelled as such:</strong> the people (Mathis, Léa, Inès, Camille and others) and their past check-ups; the referent ecologist, Dr Ferreira, who is a role-play (no real ecologist has signed anything); the scripted heatwave and citizens of the emergency scene, which runs in accelerated time on the real engine; the Stream Cup figures for the four other cities; and the background measures shown in timelines. The photos are real urban streams used as stand-ins, and the states shown make no claim about those places.</p>
+<p><strong>Not claimed:</strong> any integration with OneAquaHealth systems beyond public information and compatibility with their indicators and catalogue; any diagnosis or epidemiological forecast; any validation of the grading method; any official relationship with a city or a school.</p>
+<p>If you only remember one sentence, I hope it is the one I'd love to hear judges repeat to each other over coffee: <em>they gave a medical record to a river.</em></p>
+<h2 class="pb">Pitch deck</h2>
+<img class="full" src="slides/slide-01.png"><div class="cap">Slide 1 of 13</div><img class="full" src="slides/slide-02.png"><div class="cap">Slide 2 of 13</div><img class="full" src="slides/slide-03.png"><div class="cap">Slide 3 of 13</div><img class="full" src="slides/slide-04.png"><div class="cap">Slide 4 of 13</div><img class="full" src="slides/slide-05.png"><div class="cap">Slide 5 of 13</div><img class="full" src="slides/slide-06.png"><div class="cap">Slide 6 of 13</div><img class="full" src="slides/slide-07.png"><div class="cap">Slide 7 of 13</div><img class="full" src="slides/slide-08.png"><div class="cap">Slide 8 of 13</div><img class="full" src="slides/slide-09.png"><div class="cap">Slide 9 of 13</div><img class="full" src="slides/slide-10.png"><div class="cap">Slide 10 of 13</div><img class="full" src="slides/slide-11.png"><div class="cap">Slide 11 of 13</div><img class="full" src="slides/slide-12.png"><div class="cap">Slide 12 of 13</div><img class="full" src="slides/slide-13.png"><div class="cap">Slide 13 of 13</div>
+<h2 class="pb">Screenshots</h2>
+<img class="full" src="screenshots/01-patients-dashboard.png"><div class="cap">Patients dashboard</div><img class="full" src="screenshots/02-checkup-question.png"><div class="cap">Checkup question</div><img class="full" src="screenshots/03-checkup-sealed.png"><div class="cap">Checkup sealed</div><img class="full" src="screenshots/04-ai-reveal.png"><div class="cap">Ai reveal</div><img class="full" src="screenshots/05-ai-compare-decide.png"><div class="cap">Ai compare decide</div><img class="full" src="screenshots/06-what-your-checkup-changed.png"><div class="cap">What your checkup changed</div><img class="full" src="screenshots/07-emergency-scene-voice.png"><div class="cap">Emergency scene voice</div><img class="full" src="screenshots/08-stream-chart-alert.png"><div class="cap">Stream chart alert</div><img class="full" src="screenshots/09-hypothesis-risk-careplan.png"><div class="cap">Hypothesis risk careplan</div><img class="full" src="screenshots/10-ward-room.png"><div class="cap">Ward room</div><img class="full" src="screenshots/11-citizen-inbox.png"><div class="cap">Citizen inbox</div><img class="full" src="screenshots/12-voice-of-the-stream.png"><div class="cap">Voice of the stream</div><img class="full" src="screenshots/13-remission-recovery.png"><div class="cap">Remission recovery</div><img class="full" src="screenshots/14-fhir-r4-export.png"><div class="cap">Fhir r4 export</div><img class="full" src="screenshots/15-sign-and-school-kit.png"><div class="cap">Sign and school kit</div><img class="full" src="screenshots/16-honesty.png"><div class="cap">Honesty</div>
+</body></html>

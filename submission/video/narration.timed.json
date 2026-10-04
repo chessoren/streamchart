@@ -1,0 +1,171 @@
+[
+ {
+  "id": "n01",
+  "clip": "opening",
+  "at": 0.8,
+  "text": "This stream is sick. Nobody knows. Because nobody has ever really looked at it.",
+  "dur": 5.77
+ },
+ {
+  "id": "n02",
+  "clip": "opening",
+  "at": 12.6,
+  "text": "StreamChart. Every patient has a chart. Now, every stream does.",
+  "dur": 4.86
+ },
+ {
+  "id": "n03",
+  "clip": "problem",
+  "at": 0.8,
+  "text": "Citizen science gives a lot, and never hears back. People share an observation, nothing comes back, so they stop. And authorities can't trust data with no history and no stated confidence.",
+  "dur": 12.38
+ },
+ {
+  "id": "n04",
+  "clip": "problem",
+  "at": 14.2,
+  "text": "OneAquaHealth built the organs of a health system for urban streams. What was missing, was the patient.",
+  "dur": 7.31
+ },
+ {
+  "id": "n05",
+  "clip": "idea",
+  "at": 0.8,
+  "text": "Medicine solved this a century ago. A record that keeps the story. A level of evidence for every fact. A care loop, from symptom, to treatment, to follow-up.",
+  "dur": 10.74
+ },
+ {
+  "id": "n06",
+  "clip": "idea",
+  "at": 14.6,
+  "text": "So we gave every stream a medical chart.",
+  "dur": 2.66
+ },
+ {
+  "id": "n07",
+  "clip": "checkup",
+  "at": 1.0,
+  "text": "Meet Mathis. He walks past Trois Ponts brook, which nobody has looked at for nineteen days. He takes its pulse: one photo, seven big questions, in plain words.",
+  "dur": 12.17
+ },
+ {
+  "id": "n08",
+  "clip": "checkup",
+  "at": 16.0,
+  "text": "He answers first. Gemini looks at the same photo, but its answer is sealed, hashed the moment it arrives, until Mathis confirms his own.",
+  "dur": 9.48
+ },
+ {
+  "id": "n09",
+  "clip": "checkup",
+  "at": 30.5,
+  "text": "Then, the reveal. They agree on the foam. They disagree on the banks. Mathis keeps his answers. The last word is always human.",
+  "dur": 9.3
+ },
+ {
+  "id": "n10",
+  "clip": "checkup",
+  "at": 46.8,
+  "text": "And he sees, at once, what his check-up changed.",
+  "dur": 3.4
+ },
+ {
+  "id": "n11",
+  "clip": "chart",
+  "at": 0.8,
+  "text": "Every check-up joins the stream's chart: its state, its pulse, its whole life on one page. Every fact carries a confidence grade, from A to D.",
+  "dur": 10.08
+ },
+ {
+  "id": "n12",
+  "clip": "chart",
+  "at": 12.5,
+  "text": "When signs agree, the system proposes a hypothesis, never a diagnosis, with its reasons. And a care plan, quoted from the project's own catalogue of measures.",
+  "dur": 11.44
+ },
+ {
+  "id": "n13",
+  "clip": "sim",
+  "at": 1.0,
+  "text": "Here is a week in sixty seconds. A clearly labelled simulation, running the real engine.",
+  "dur": 6.01
+ },
+ {
+  "id": "n14",
+  "clip": "sim",
+  "at": 16.0,
+  "text": "L\u00e9a confirms what Mathis saw. The grade rises.",
+  "dur": 3.63
+ },
+ {
+  "id": "n15",
+  "clip": "sim",
+  "at": 27.0,
+  "text": "In\u00e8s reports still water. A heatwave is forecast. A seven-day health indication appears, and the stream goes into alert.",
+  "dur": 8.39
+ },
+ {
+  "id": "n16",
+  "clip": "sim",
+  "at": 39.5,
+  "text": "At city hall, the ward room puts it first.",
+  "dur": 3.08
+ },
+ {
+  "id": "n17",
+  "clip": "sim",
+  "at": 46.5,
+  "text": "The referent ecologist reviews the photos, removes a premature measure, and signs. The AI assists. A human decides.",
+  "dur": 9.53
+ },
+ {
+  "id": "n18",
+  "clip": "sim",
+  "at": 56.8,
+  "text": "Every citizen who contributed hears back.",
+  "dur": 3.32
+ },
+ {
+  "id": "n19",
+  "clip": "reply",
+  "at": 0.8,
+  "text": "Because citizen science should always answer. Your check-up triggered an inspection.",
+  "dur": 5.36
+ },
+ {
+  "id": "n20",
+  "clip": "reply",
+  "at": 7.0,
+  "text": "And the stream itself speaks, only with what its record contains.",
+  "dur": 4.44
+ },
+ {
+  "id": "n21",
+  "clip": "reply",
+  "at": 12.2,
+  "text": "For the first time in a long while, I know someone is taking care of me.",
+  "voice": "soft",
+  "dur": 4.75
+ },
+ {
+  "id": "n22",
+  "clip": "scale",
+  "at": 0.8,
+  "text": "Every chart is an HL7 FHIR R4 record, accepted by a public FHIR server.",
+  "dur": 7.03
+ },
+ {
+  "id": "n23",
+  "clip": "scale",
+  "at": 12.8,
+  "text": "A printed sign at the foot of each stream. A school kit. No hardware.",
+  "dur": 5.22
+ },
+ {
+  "id": "n24",
+  "clip": "end",
+  "at": 0.6,
+  "text": "Today, one stream in Toulouse. Tomorrow, five cities. StreamChart. They gave a medical record to a river.",
+  "dur": 7.81
+ }
+]

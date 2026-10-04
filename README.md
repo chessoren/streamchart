@@ -6,6 +6,7 @@ StreamChart gives every urban stream what medicine gives every patient: a record
 
 - **Live demo:** https://streamchart-oneaquahealth.netlify.app
 - **Hackathon:** OneAquaHealth IEEE Global Hackathon 2026. Primary track: **Track 7, Digital Health Standards**. Also covers Tracks 3 (AI-supported assessment), 2 (data-to-insight) and 5 (community).
+- **Submission kit:** [`submission/`](submission/): demo video, 13-slide deck (3:2), screenshots, logo, the full “About the project” and the submission PDF.
 - **AI:** Google Gemini vision, bring your own key (Settings). Without a key, the sample photos replay real Gemini answers recorded in advance, and they are labelled as such.
 
 > Demonstration data. The people, past check-ups and the emergency scene are demo data and are labelled as such everywhere. The photos are real urban streams (Wikimedia Commons, CC BY-SA). The AI calls, the weather forecast, the confidence grades, the state engine and the FHIR export are real.

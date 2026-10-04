@@ -6,3 +6,7 @@ dist
 test-results
 playwright-report
 *.tsbuildinfo
+submission/video/build/
+submission/video/clips/
+submission/video/audio_old/
+submission/brand/crops/

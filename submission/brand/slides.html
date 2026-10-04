@@ -1,0 +1,281 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>StreamChart deck</title>
+<style>
+@font-face{font-family:Inter;src:url(inter.woff2) format('woff2');font-weight:100 900}
+*{box-sizing:border-box}
+body{margin:0;background:#cfd8e6;font-family:Inter,system-ui,sans-serif;color:#1b2333}
+.slide{width:1950px;height:1300px;position:relative;overflow:hidden;margin:0 0 40px;padding:96px 110px;
+  background:radial-gradient(1400px 700px at 15% -10%,#ffffff 0%,transparent 60%),radial-gradient(900px 700px at 110% 120%,#e4ecfb 0%,transparent 60%),#edf2f8;display:flex;flex-direction:column}
+.slide.dark{background:radial-gradient(1200px 700px at 85% -10%,#3b6ef6 0%,transparent 55%),linear-gradient(160deg,#1b2c55 0%,#0e1830 100%);color:#fff}
+.foot{position:absolute;left:110px;right:110px;bottom:48px;display:flex;justify-content:space-between;font-size:22px;color:#8a97ab}
+.dark .foot{color:rgba(255,255,255,.55)}
+.brand{display:flex;align-items:center;gap:14px;font-weight:700;color:#111a2b}
+.dark .brand{color:#fff}
+.mark{width:40px;height:40px;border-radius:50%;background:conic-gradient(from 210deg,#3b6ef6,#8fb0ff,#f0556b,#3b6ef6);display:grid;place-items:center}
+.mark i{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.kicker{font-size:26px;font-weight:600;color:#3b6ef6;letter-spacing:.02em;display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.kicker::before{content:'';width:12px;height:12px;border-radius:50%;background:#3b6ef6;box-shadow:0 0 0 6px #dfe8ff}
+.dark .kicker{color:#9fbaff}.dark .kicker::before{box-shadow:0 0 0 6px rgba(255,255,255,.12);background:#9fbaff}
+h1{font-size:96px;line-height:1.02;letter-spacing:-.035em;margin:0;font-weight:700;color:#111a2b}
+h2{font-size:68px;line-height:1.06;letter-spacing:-.03em;margin:0 0 34px;font-weight:700;color:#111a2b;max-width:1500px}
+.dark h1,.dark h2{color:#fff}
+p.lead{font-size:34px;line-height:1.4;color:#4a566c;margin:0;max-width:1300px}
+.dark p.lead{color:rgba(255,255,255,.8)}
+.grid{display:grid;gap:28px}
+.card{background:#fff;border:1.5px solid #e2e8f1;border-radius:28px;padding:34px 36px;box-shadow:0 2px 4px rgba(17,26,43,.04),0 18px 50px rgba(17,26,43,.07)}
+.card h3{font-size:34px;margin:0 0 12px;letter-spacing:-.02em;color:#111a2b}
+.card p{font-size:25px;line-height:1.45;color:#56627a;margin:0}
+.num{font-size:22px;font-weight:700;color:#3b6ef6;background:#e8efff;border-radius:12px;padding:6px 14px;display:inline-block;margin-bottom:18px}
+.shot{border-radius:22px;border:1.5px solid #dfe6f0;box-shadow:0 30px 80px rgba(30,50,90,.18);display:block;width:100%}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:14px;font-size:24px;font-weight:600}
+.s{background:#e5f6ee;color:#22a06b}.w{background:#fdf1e1;color:#e08a1e}.a{background:#fdeaea;color:#e5484d}.u{background:#edf1f6;color:#8494ab}.b{background:#e8efff;color:#3b6ef6}
+.table{width:100%;border-collapse:collapse;font-size:28px}
+.table td{padding:16px 18px;border-bottom:1.5px solid #e8edf4}
+.table td:first-child{color:#8a97ab;width:40%}
+.table td:last-child{font-weight:600;color:#111a2b}
+.quote{font-size:52px;line-height:1.3;font-weight:400;letter-spacing:-.02em}
+.g{display:inline-grid;place-items:center;min-width:56px;height:48px;border-radius:12px;font-weight:800;font-size:28px;margin-right:18px}
+.big{font-size:150px;font-weight:600;letter-spacing:-.05em;color:#111a2b;line-height:1}
+ul.clean{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:18px;font-size:29px;line-height:1.4;color:#3a4558}
+ul.clean li{position:relative;padding-left:30px}
+ul.clean li::before{content:'';position:absolute;left:0;top:15px;width:12px;height:12px;border-radius:50%;background:#3b6ef6}
+.cta{background:linear-gradient(135deg,#f0556b,#c8243f);color:#fff;padding:18px 34px;border-radius:18px;font-size:30px;font-weight:700;display:inline-block;box-shadow:0 14px 34px rgba(200,36,63,.3)}
+.arrow{font-size:44px;color:#9aa5b8;align-self:center}
+</style></head><body>
+
+<!-- 1 Title -->
+<section class="slide dark">
+  <div class="brand"><span class="mark"><i><svg width="26" height="16" viewBox="0 0 100 62"><path d="M4 34 H14 L19 22 L25 46 L31 12 L37 40 L41 30 C47 30 49 22 56 22 C64 22 64 42 72 42 C80 42 80 26 88 26 C93 26 95 30 96 32" stroke="#3B6EF6" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i></span>OneAquaHealth IEEE Global Hackathon 2026 · Track 7 Digital Health Standards</div>
+  <div style="margin-top:auto;margin-bottom:auto;display:flex;gap:90px;align-items:center">
+    <div style="flex:1">
+      <h1 style="font-size:150px">StreamChart</h1>
+      <p class="quote" style="margin-top:30px;color:#cfdcff">Every patient has a chart.<br>Now every stream does.</p>
+      <p class="lead" style="margin-top:40px;font-size:30px">A health record and a care loop for every urban stream: a 60-second citizen check-up, a sealed AI second look, confidence grades, a care plan co-signed by an ecologist — and a reply to the citizen. Exported as HL7 FHIR R4.</p>
+    </div>
+    <img src="../logo/streamchart-logo-1024.png" style="width:560px;border-radius:50%">
+  </div>
+  <div class="foot"><span>streamchart-oneaquahealth.netlify.app</span><span>github.com/chessoren/streamchart</span></div>
+</section>
+
+<!-- 2 Problem -->
+<section class="slide">
+  <div class="kicker">The problem</div>
+  <h2>Citizen science gives a lot — and never hears back.</h2>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:30px">
+    <div class="card"><span class="num">01</span><h3>No continuous thread</h3><p>Observations pile up without a story. Nobody can say “this stream was better in May, relapsed in August, here is why”.</p></div>
+    <div class="card"><span class="num">02</span><h3>No measured trust</h3><p>A child's photo and an ecologist's survey land in the same database with the same apparent weight. Authorities can't tell how far to trust either.</p></div>
+    <div class="card"><span class="num">03</span><h3>No reply</h3><p>The person who gave their time receives nothing, so they don't come back. Track 5 names it: <b>low repeat engagement</b>.</p></div>
+  </div>
+  <p class="lead" style="margin-top:56px">OneAquaHealth has built the organs of a health system for urban streams — citizen app, city dashboards, resilience map, GEOSSIP, a decision-support system, DipteraCAST. <b style="color:#111a2b">What is missing is the patient.</b></p>
+  <div class="foot"><span>StreamChart</span><span>2 / 13</span></div>
+</section>
+
+<!-- 3 Insight -->
+<section class="slide">
+  <div class="kicker">The insight</div>
+  <h2>Medicine solved this a century ago.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1.15fr;gap:60px;align-items:start">
+    <div class="col">
+      <p class="lead">Three inventions: the <b>medical record</b> that keeps the story, the <b>level of evidence</b> that says how far to trust each fact, and the <b>care loop</b> that links a symptom to an action and a follow-up.</p>
+      <p class="quote" style="margin-top:50px;color:#3b6ef6">From streams<br>to <b>patients</b><br>to systems.</p>
+    </div>
+    <div class="card" style="padding:16px 30px">
+      <table class="table">
+        <tr><td>Patient</td><td>A stream reach</td></tr>
+        <tr><td>Medical record</td><td>The stream's chart</td></tr>
+        <tr><td>Consultation</td><td>A 60-second check-up</td></tr>
+        <tr><td>Level of evidence</td><td>Confidence grade A–D</td></tr>
+        <tr><td>Diagnosis</td><td>Hypothesis — never certainty</td></tr>
+        <tr><td>Prescription</td><td>Care plan, co-signed</td></tr>
+        <tr><td>Follow-up visit</td><td>Same-viewpoint check-up</td></tr>
+        <tr><td style="border:0">Recovery</td><td style="border:0">Remission</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>StreamChart</span><span>3 / 13</span></div>
+</section>
+
+<!-- 4 Loop -->
+<section class="slide">
+  <div class="kicker">How it works</div>
+  <h2>One loop: observe, understand, act, come back.</h2>
+  <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:40px">
+    <div class="card"><span class="num">1 · Triage</span><h3>60-second check-up</h3><p>One photo, seven big questions. The citizen answers first; the AI's look is sealed.</p></div>
+    <div class="card"><span class="num">2 · Record</span><h3>The stream's chart</h3><p>State, pulse, timeline. Every fact carries its author and its grade.</p></div>
+    <div class="card"><span class="num">3 · Assess</span><h3>Hypothesis + risk</h3><p>Cautious hypotheses and a 7-day, weather-aware health indication.</p></div>
+    <div class="card"><span class="num">4 · Treat</span><h3>Co-signed care plan</h3><p>Measures from the OAH catalogue. Official only when an ecologist signs.</p></div>
+    <div class="card"><span class="num">5 · Follow up</span><h3>Reply & remission</h3><p>Citizens hear what their check-up changed. A follow-up confirms recovery.</p></div>
+  </div>
+  <div style="display:flex;gap:26px;margin-top:56px;align-items:center;flex-wrap:wrap">
+    <span class="pill u">◌ Not followed</span><span class="arrow">→</span><span class="pill w">⧗ Under watch</span><span class="arrow">→</span><span class="pill a">! Alert</span><span class="arrow">→</span><span class="pill b">✓ Plan validated</span><span class="arrow">→</span><span class="pill s">♥ Remission</span>
+  </div>
+  <div class="foot"><span>StreamChart</span><span>4 / 13</span></div>
+</section>
+
+<!-- 5 Sealed AI -->
+<section class="slide">
+  <div class="kicker">Track 3 · AI that assists, never replaces</div>
+  <div style="display:grid;grid-template-columns:.9fr 1.25fr;gap:70px;align-items:center;flex:1">
+    <div>
+      <h2 style="font-size:62px">The citizen answers first. The AI's answer is sealed.</h2>
+      <ul class="clean">
+        <li>Gemini vision looks at the photo while the citizen answers — it never sees their answers.</li>
+        <li>Its answer is hashed (SHA-256) on arrival and revealed only after the citizen seals their own: <b>commit–reveal</b>.</li>
+        <li>Differences are highlighted on the photo. Keep mine, adopt the AI's, or ask a second opinion. <b>The last word is human.</b></li>
+        <li>The AI may say “unsure” — and always does for odour.</li>
+      </ul>
+    </div>
+    <img class="shot" src="crops/04-ai-reveal.png">
+  </div>
+  <div class="foot"><span>StreamChart</span><span>5 / 13</span></div>
+</section>
+
+<!-- 6 Grades -->
+<section class="slide">
+  <div class="kicker">Measured trust</div>
+  <h2>Every fact carries a confidence grade.</h2>
+  <div style="display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:start">
+    <div class="card" style="padding:26px 34px">
+      <div style="display:flex;align-items:center;padding:20px 0;border-bottom:1.5px solid #e8edf4;font-size:28px"><span class="g s">A</span>Photo, person and AI agree, corroborated by others — or validated by an expert</div>
+      <div style="display:flex;align-items:center;padding:20px 0;border-bottom:1.5px solid #e8edf4;font-size:28px"><span class="g b">B</span>Photo with person–AI agreement, or two concordant people</div>
+      <div style="display:flex;align-items:center;padding:20px 0;border-bottom:1.5px solid #e8edf4;font-size:28px"><span class="g w">C</span>Plausible but isolated, or an unresolved disagreement</div>
+      <div style="display:flex;align-items:center;padding:20px 0;font-size:28px"><span class="g u">D</span>Fragile: no photo, imprecise or contradicted</div>
+    </div>
+    <div>
+      <p class="lead">The grade is a property of the information, not a judgement of the person. It moves: a <b>C</b> becomes <b>B</b> when a neighbour confirms it, and <b>A</b> when the referent ecologist validates it.</p>
+      <p class="quote" style="margin-top:40px;font-size:44px;color:#3b6ef6">The community becomes more credible than the sum of its parts.</p>
+      <p class="lead" style="margin-top:30px;font-size:26px">Disagreements are shown, never smoothed. A proposed method — validation against expert assessments is on the roadmap.</p>
+    </div>
+  </div>
+  <div class="foot"><span>StreamChart</span><span>6 / 13</span></div>
+</section>
+
+<!-- 7 Chart -->
+<section class="slide">
+  <div class="kicker">Track 2 · Data to insight</div>
+  <div style="display:grid;grid-template-columns:1.3fr .8fr;gap:64px;align-items:center;flex:1">
+    <img class="shot" src="crops/08-stream-chart-alert.png">
+    <div>
+      <h2 style="font-size:60px">A stream's whole life, on one page.</h2>
+      <ul class="clean">
+        <li>Identity, state badge and one sentence anyone can read.</li>
+        <li>A pulse: a heartbeat trace of its health over four months.</li>
+        <li>A timeline of check-ups, measures, hypotheses, plans and interventions — with authors and grades.</li>
+        <li>Readable by a ten-year-old, credible to an ecologist. Expert details one tap away.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>StreamChart</span><span>7 / 13</span></div>
+</section>
+
+<!-- 8 One Health -->
+<section class="slide">
+  <div class="kicker">Track 6 · The One Health bridge</div>
+  <div style="display:grid;grid-template-columns:.85fr 1.3fr;gap:64px;align-items:center;flex:1">
+    <div>
+      <h2 style="font-size:60px">From a stream's symptoms to a signal for people.</h2>
+      <ul class="clean">
+        <li><b>Hypotheses, never diagnoses:</b> “possible input of wastewater or polluted runoff — confidence medium”, with reasons and what would confirm it.</li>
+        <li><b>Seven-day indication:</b> stagnant water × a live <b>Open-Meteo</b> forecast → conditions favourable to mosquitoes. Explained, dated, labelled “not an epidemiological forecast”.</li>
+        <li>A slot is ready for <b>DipteraCAST</b> (ENORA) as the chart's “laboratory analysis”.</li>
+      </ul>
+    </div>
+    <img class="shot" src="crops/09-hypothesis-risk-careplan.png">
+  </div>
+  <div class="foot"><span>StreamChart</span><span>8 / 13</span></div>
+</section>
+
+<!-- 9 Care plan -->
+<section class="slide">
+  <div class="kicker">Human in the loop, made visible</div>
+  <div style="display:grid;grid-template-columns:1.25fr .9fr;gap:64px;align-items:center;flex:1">
+    <img class="shot" src="crops/10-ward-room.png">
+    <div>
+      <h2 style="font-size:60px">The AI proposes. An ecologist signs.</h2>
+      <ul class="clean">
+        <li>Care plans of at most five lines, quoted from the <b>OneAquaHealth D2.4 Catalogue of measures</b> (§4.2.2 Sewer system and point-source improvements…).</li>
+        <li>Each line: what, why, who (city, association, residents), urgency, effort.</li>
+        <li>The plan stays <i>proposed</i> until the referent ecologist removes what is premature and <b>signs</b> — the stamp goes from proposed to validated.</li>
+        <li>The city's <b>ward room</b> shows where to go first, in three lines.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>StreamChart</span><span>9 / 13</span></div>
+</section>
+
+<!-- 10 Loop closes -->
+<section class="slide dark">
+  <div class="kicker">Tracks 4 & 5 · The loop closes</div>
+  <div style="display:grid;grid-template-columns:.9fr 1.25fr;gap:64px;align-items:center;flex:1">
+    <div>
+      <h2 style="font-size:60px">“Your check-up triggered an inspection.”</h2>
+      <p class="lead" style="font-size:30px">Every contributor hears what their check-up changed: compared, first in the chain, plan validated, intervention done, follow-up, remission. No points, no streaks — <b style="color:#fff">the only reward that lasts is seeing your gesture have an effect.</b></p>
+      <p class="lead" style="margin-top:30px;font-size:30px">And the stream speaks, in the first person, in three registers — grounded sentence by sentence in its record. Tap a sentence, see its source. It never accuses, never alarms, never says the water is safe.</p>
+    </div>
+    <img class="shot" style="border-color:rgba(255,255,255,.2)" src="crops/12-voice-of-the-stream.png">
+  </div>
+  <div class="foot"><span>StreamChart</span><span>10 / 13</span></div>
+</section>
+
+<!-- 11 FHIR -->
+<section class="slide">
+  <div class="kicker">Track 7 · Digital health standards</div>
+  <h2>The chart is an HL7 FHIR R4 record.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start">
+    <div class="card" style="padding:16px 30px">
+      <table class="table" style="font-size:25px">
+        <tr><td>The stream</td><td>Patient + Location</td></tr>
+        <tr><td>60-second form</td><td>Questionnaire / QuestionnaireResponse</td></tr>
+        <tr><td>Each answer · photo</td><td>Observation (+grade) · Media</td></tr>
+        <tr><td>The AI's look</td><td>Observation from a Device</td></tr>
+        <tr><td>Who did what · seals</td><td>Provenance + signature</td></tr>
+        <tr><td>Hypothesis</td><td>DiagnosticReport</td></tr>
+        <tr><td>7-day indication</td><td>RiskAssessment</td></tr>
+        <tr><td>Care plan · co-signature</td><td>CarePlan · Provenance (verifier)</td></tr>
+        <tr><td style="border:0">Reply to the citizen</td><td style="border:0">Communication</td></tr>
+      </table>
+    </div>
+    <div>
+      <p class="lead">One click exports a transaction Bundle — and posts it to the public <b>HAPI FHIR R4</b> server, which accepts it (43 resources created, re-posts idempotent).</p>
+      <p class="lead" style="margin-top:30px">Making the stream a <b>Patient</b> is the metaphor made literal: CarePlan, DiagnosticReport and RiskAssessment need a Patient subject, so any FHIR server, viewer or pipeline handles a river with no custom resource.</p>
+      <div style="margin-top:36px;display:flex;gap:14px;flex-wrap:wrap"><span class="pill b">FAIR-ready provenance</span><span class="pill s">Accepted by HAPI FHIR</span><span class="pill w">Demo data tagged in meta</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>StreamChart</span><span>11 / 13</span></div>
+</section>
+
+<!-- 12 Scale -->
+<section class="slide">
+  <div class="kicker">Feasibility & scale</div>
+  <h2>No hardware. No budget. Five cities tomorrow.</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center">
+    <img class="shot" src="crops/15-sign-and-school-kit.png">
+    <div class="grid" style="grid-template-columns:1fr 1fr">
+      <div class="card"><h3>A sign per stream</h3><p>A printed “patient file” with a QR code — and the same viewpoint for every photo.</p></div>
+      <div class="card"><h3>A school kit</h3><p>One page, 45 minutes, four roles. Any school adopts a stream in a week.</p></div>
+      <div class="card"><h3>Built on OAH</h3><p>Their indicators, their catalogue, their tools as “labs”. A layer, not a competitor.</p></div>
+      <div class="card"><h3>Static & open</h3><p>React + TypeScript, no server, BYO Gemini key, MIT. Any city can fork it.</p></div>
+    </div>
+  </div>
+  <p class="lead" style="margin-top:44px">Benevento · Coimbra · Ghent · Oslo · Toulouse — a seasonal <b>Stream Cup</b> on what matters: streams followed, remissions, quality, schools.</p>
+  <div class="foot"><span>StreamChart</span><span>12 / 13</span></div>
+</section>
+
+<!-- 13 Honesty + close -->
+<section class="slide dark">
+  <div class="kicker">Honest by design · What's next</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:70px;flex:1;align-items:center">
+    <div>
+      <h2 style="font-size:58px">Real where it matters. Labelled where it isn't.</h2>
+      <p class="lead" style="font-size:28px"><b style="color:#fff">Real:</b> check-up, sealed Gemini comparison, grades, states, hypotheses, live weather, co-signature, replies, voice, FHIR export.<br><br><b style="color:#fff">Demonstration:</b> the people and past check-ups, the role-played ecologist, the scripted heatwave of the emergency scene. Photos are real Toulouse-area streams (CC BY-SA).</p>
+      <p class="lead" style="margin-top:30px;font-size:28px"><b style="color:#fff">Next:</b> a pilot with one school and one city service; a validation study of the grades; plugging in DipteraCAST and the DSS.</p>
+    </div>
+    <div style="text-align:center">
+      <img src="../logo/streamchart-logo-1024.png" style="width:380px;border-radius:50%">
+      <p class="quote" style="margin-top:40px">“They gave a medical record<br>to a river.”</p>
+      <div style="margin-top:40px"><span class="cta">streamchart-oneaquahealth.netlify.app</span></div>
+    </div>
+  </div>
+  <div class="foot"><span>github.com/chessoren/streamchart</span><span>13 / 13</span></div>
+</section>
+</body></html>

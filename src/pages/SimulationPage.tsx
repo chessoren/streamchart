@@ -1,6 +1,6 @@
 import { Pause, Play, RotateCcw, ShieldCheck } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { STATE_RANK, findingsOf, hypothesesOf, personName, riskOf, stateOf, threeLineSummary, voiceOf } from '../domain/engine';
+import { STATE_RANK, daysSinceVisit, findingsOf, hypothesesOf, personName, riskOf, stateOf, threeLineSummary, voiceOf } from '../domain/engine';
 import { FIELD_SHORT } from '../domain/fields';
 import { MEASURE_BY_ID } from '../domain/catalogue';
 import { makeCheckup, seedWorld, setForecast, signPlan, submitCheckup } from '../domain/world';
@@ -24,7 +24,7 @@ interface Beat {
 // The accelerated scene. Every computation (grades, state, hypothesis, risk, plan, notices) is the real engine;
 // only the people, their check-ups and the heatwave are scripted, and the screen says so.
 const BEATS: Beat[] = [
-  { t: 0, focus: 'map', caption: 'Trois Ponts brook has not been followed for 19 days. A lone patient.' },
+  { t: 0, focus: 'map', caption: 'Trois Ponts brook has not been followed for over two weeks. A lone patient.' },
   {
     t: 5, focus: 'checkup', person: 'mathis', caption: 'Day 1. Mathis sees foam and smells something. One person is enough to open the file.',
     apply: (w, t0) => submitCheckup({ ...w, now: new Date(t0).toISOString() }, makeCheckup({ streamId: 'trois-ponts', authorId: 'mathis', at: new Date(t0).toISOString(), photo: 'photos/foam-stone.jpg', answers: BASE, decisions: { banks: 'kept', vegetation: 'kept' } })),
@@ -58,7 +58,8 @@ const BEATS: Beat[] = [
 
 export function SimulationPage() {
   const { setWorld, showToast } = useStore();
-  const [t0] = useState(() => Date.now());
+  // the scene ends about now, so a kept record has no future dates
+  const [t0] = useState(() => Date.now() - 4 * 24 * H);
   const [i, setI] = useState(0);
   const [playing, setPlaying] = useState(false);
   const timer = useRef<number>();
@@ -139,7 +140,7 @@ function Focus({ w, beat }: { w: World; beat: Beat }) {
     return (
       <div className="card col" style={{ gap: 10 }}>
         <StateBadge state={st} lg />
-        <p className="serif" style={{ fontSize: 24, color: 'var(--ink)' }}>“Nobody has looked at me for 19 days.”</p>
+        <p className="serif" style={{ fontSize: 24, color: 'var(--ink)' }}>“Nobody has looked at me for {daysSinceVisit(w, 'trois-ponts')} days.”</p>
         <img src="photos/three-bridges.jpg" alt="" className="idphoto" style={{ filter: 'grayscale(0.7)' }} />
       </div>
     );

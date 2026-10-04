@@ -77,7 +77,7 @@ export function toFhirBundle(w: World, streamId: string): Bundle {
     physicalType: { coding: [{ system: 'http://terminology.hl7.org/CodeSystem/location-physical-type', code: 'area', display: 'Area' }] },
     position: { latitude: stream.lat, longitude: stream.lon },
     managingOrganization: { reference: org },
-  });
+  }, `identifier=${BASE}/id/reach|${stream.id}`);
   const st = stateOf(w, streamId);
   const patient = put('patient', {
     resourceType: 'Patient',
@@ -91,15 +91,15 @@ export function toFhirBundle(w: World, streamId: string): Bundle {
     active: true,
     name: [{ use: 'official', text: stream.name }],
     managingOrganization: { reference: org },
-    link: [],
-  });
+  }, `identifier=${BASE}/id/reach|${stream.id}`);
   const device = put('device', {
     resourceType: 'Device',
+    identifier: [{ system: `${BASE}/id/device`, value: 'streamchart-second-look-gemini' }],
     deviceName: [{ name: 'StreamChart sealed second look (Gemini vision)', type: 'model-name' }],
     type: { text: 'AI image assessment model' },
     version: [{ value: 'gemini-3.5-flash-lite' }],
     note: [{ text: 'Sees the photo only; its answer is hashed on arrival and revealed after the citizen seals their own.' }],
-  });
+  }, `identifier=${BASE}/id/device|streamchart-second-look-gemini`);
   const q = put('questionnaire', questionnaire(), `url=${QUESTIONNAIRE_URL}`);
 
   const practitioner = (id: string) => {
@@ -112,7 +112,7 @@ export function toFhirBundle(w: World, streamId: string): Bundle {
       identifier: [{ system: `${BASE}/id/pseudonym`, value: id }],
       name: [{ text: p?.name ?? id }],
       qualification: [{ code: { text: p?.kind === 'ecologist' ? 'Referent ecologist' : p?.kind === 'technician' ? 'City water technician' : p?.kind === 'school' ? 'School class (citizen science)' : 'Citizen observer' } }],
-    });
+    }, `identifier=${BASE}/id/pseudonym|${id}`);
   };
 
   const checkups = w.checkups.filter((c) => c.streamId === streamId).sort((a, b) => a.at.localeCompare(b.at));

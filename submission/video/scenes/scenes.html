@@ -1,0 +1,90 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>scene</title>
+<style>
+@font-face{font-family:Inter;src:url(inter.woff2) format('woff2');font-weight:100 900}
+*{box-sizing:border-box}
+html,body{margin:0;width:1920px;height:1080px;overflow:hidden;font-family:Inter,sans-serif;background:#0e1830;color:#fff}
+.scene{position:absolute;inset:0;display:none}
+.on{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes fadeOut{to{opacity:0}}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.16) translate(-1.5%,-1%)}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}70%{opacity:1;transform:scale(1.04)}100%{transform:scale(1)}}
+@keyframes draw{to{stroke-dashoffset:0}}
+.a{opacity:0;animation:fadeUp 1.1s cubic-bezier(.2,.8,.2,1) forwards}
+.light{background:radial-gradient(1400px 700px at 15% -10%,#ffffff 0%,transparent 60%),radial-gradient(900px 700px at 110% 120%,#e4ecfb 0%,transparent 60%),#edf2f8;color:#111a2b}
+.kick{font-size:26px;font-weight:600;color:#3b6ef6;display:flex;gap:12px;align-items:center}
+.kick::before{content:'';width:12px;height:12px;border-radius:50%;background:#3b6ef6;box-shadow:0 0 0 6px #dfe8ff}
+h1{margin:0;font-weight:700;letter-spacing:-.035em}
+.card{background:#fff;border:1.5px solid #e2e8f1;border-radius:26px;padding:34px 36px;box-shadow:0 18px 50px rgba(17,26,43,.08);color:#111a2b}
+.card h3{font-size:36px;margin:12px 0 10px;letter-spacing:-.02em}
+.card p{font-size:25px;line-height:1.45;color:#56627a;margin:0}
+.num{font-size:22px;font-weight:700;color:#3b6ef6;background:#e8efff;border-radius:12px;padding:6px 14px;display:inline-block}
+</style></head><body>
+
+<!-- OPENING -->
+<div class="scene" id="opening">
+  <img src="three-bridges.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kb 22s linear forwards;filter:saturate(.85)">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,14,30,.86) 0%,rgba(8,14,30,.45) 55%,rgba(8,14,30,.2) 100%)"></div>
+  <div style="position:absolute;left:140px;top:300px;font-size:76px;font-weight:300;line-height:1.25;letter-spacing:-.02em">
+    <div class="a" style="animation-delay:1s">This stream is sick.</div>
+    <div class="a" style="animation-delay:3.4s">Nobody knows.</div>
+    <div class="a" style="animation-delay:5.6s;color:#9fbaff">Because nobody has ever<br>really looked at it.</div>
+  </div>
+  <div style="position:absolute;left:140px;bottom:90px;font-size:22px;color:rgba(255,255,255,.6)" class="a" >A real urban stream, Toulouse · photo CC BY-SA, Wikimedia Commons</div>
+  <div id="brand" style="position:absolute;inset:0;opacity:0;animation:fadeIn 1.2s ease 11s forwards;background:radial-gradient(1200px 700px at 85% -10%,#3b6ef6 0%,transparent 55%),linear-gradient(160deg,#1b2c55 0%,#0e1830 100%);display:flex;align-items:center;justify-content:center;gap:90px">
+    <img src="logo.png" style="width:440px;border-radius:50%;opacity:0;animation:pop 1.1s ease 11.6s forwards">
+    <div>
+      <h1 class="a" style="font-size:150px;animation-delay:12.2s">StreamChart</h1>
+      <div class="a" style="font-size:54px;font-weight:300;color:#cfdcff;margin-top:18px;line-height:1.25;animation-delay:13.4s">Every patient has a chart.<br>Now every stream does.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<div class="scene light" id="problem">
+  <div style="position:absolute;left:140px;right:140px;top:110px">
+    <div class="kick a" style="animation-delay:.3s">The problem</div>
+    <h1 class="a" style="font-size:84px;margin-top:22px;animation-delay:.8s;color:#111a2b">Citizen science gives a lot —<br>and never hears back.</h1>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px">
+      <div class="card a" style="animation-delay:4s"><span class="num">01</span><h3>No reply</h3><p>People give an observation, and nothing ever comes back. So they stop coming.</p></div>
+      <div class="card a" style="animation-delay:7.5s"><span class="num">02</span><h3>No measured trust</h3><p>Authorities can't trust data with no history and no stated confidence.</p></div>
+      <div class="card a" style="animation-delay:10.5s"><span class="num">03</span><h3>No continuous thread</h3><p>Observations pile up without a story the city can act on.</p></div>
+    </div>
+    <div class="a" style="animation-delay:14s;margin-top:60px;font-size:40px;line-height:1.35;color:#4a566c;max-width:1500px">OneAquaHealth built the organs of a health system for urban streams.<br><b style="color:#111a2b">What was missing was the patient.</b></div>
+  </div>
+</div>
+
+<!-- IDEA -->
+<div class="scene light" id="idea">
+  <div style="position:absolute;left:140px;right:140px;top:100px;display:grid;grid-template-columns:.9fr 1.1fr;gap:80px">
+    <div>
+      <div class="kick a" style="animation-delay:.3s">The insight</div>
+      <h1 class="a" style="font-size:88px;margin-top:22px;animation-delay:.8s;color:#111a2b">Medicine solved this a century ago.</h1>
+      <div class="a" style="animation-delay:3s;margin-top:40px;font-size:34px;line-height:1.45;color:#4a566c">A <b style="color:#111a2b">record</b> that keeps the story.<br>A <b style="color:#111a2b">level of evidence</b> for every fact.<br>A <b style="color:#111a2b">care loop</b>: symptom, treatment, follow-up.</div>
+      <div class="a" style="animation-delay:15s;margin-top:50px;font-size:54px;font-weight:600;color:#3b6ef6;letter-spacing:-.02em;line-height:1.15">So we gave every stream<br>a medical chart.</div>
+    </div>
+    <div class="card" style="padding:18px 34px;align-self:start;margin-top:30px">
+      <div id="lex"></div>
+    </div>
+  </div>
+</div>
+
+<!-- END -->
+<div class="scene" id="end" style="background:radial-gradient(1200px 700px at 85% -10%,#3b6ef6 0%,transparent 55%),linear-gradient(160deg,#1b2c55 0%,#0e1830 100%)">
+  <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+    <img src="logo.png" style="width:300px;border-radius:50%;opacity:0;animation:pop 1s ease .3s forwards">
+    <div class="a" style="font-size:66px;font-weight:300;margin-top:44px;letter-spacing:-.02em;animation-delay:1.2s">“They gave a medical record to a river.”</div>
+    <div class="a" style="margin-top:44px;animation-delay:2.6s"><span style="background:linear-gradient(135deg,#f0556b,#c8243f);padding:18px 34px;border-radius:18px;font-size:34px;font-weight:700;box-shadow:0 14px 34px rgba(200,36,63,.35)">streamchart-oneaquahealth.netlify.app</span></div>
+    <div class="a" style="margin-top:34px;font-size:28px;color:rgba(255,255,255,.7);animation-delay:3.4s">github.com/chessoren/streamchart · OneAquaHealth IEEE Global Hackathon 2026 · Track 7</div>
+  </div>
+</div>
+
+<script>
+const s = new URLSearchParams(location.search).get('s') || 'opening';
+document.getElementById(s).classList.add('on');
+const lex = [['Patient','A stream reach'],['Medical record','The stream’s chart'],['Consultation','60-second check-up'],['Level of evidence','Confidence grade A–D'],['Diagnosis','Hypothesis'],['Prescription','Care plan, co-signed'],['Follow-up visit','Follow-up check-up'],['Recovery','Remission']];
+document.getElementById('lex').innerHTML = lex.map(([a,b],i)=>`<div class="a" style="animation-delay:${4.5+i*1.15}s;display:grid;grid-template-columns:1fr 50px 1.2fr;align-items:center;padding:19px 0;border-bottom:${i<7?'1.5px solid #e8edf4':'0'};font-size:31px"><span style="color:#8a97ab">${a}</span><span style="color:#3b6ef6;font-weight:700">→</span><b style="color:#111a2b">${b}</b></div>`).join('');
+</script>
+</body></html>

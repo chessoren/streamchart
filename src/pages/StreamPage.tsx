@@ -419,7 +419,8 @@ function ExpertDetails({ world, streamId }: { world: World; streamId: string }) 
       const j = await r.json();
       if (r.ok && j.resourceType === 'Bundle') {
         const created = (j.entry ?? []).filter((e: { response?: { status?: string } }) => /^20[01]/.test(e.response?.status ?? '')).length;
-        setHapi(`Accepted by HAPI FHIR R4 (HTTP ${r.status}): ${created} of ${bundle.entry.length} resources created or matched.`);
+        const loc = (j.entry ?? []).map((e: { response?: { location?: string } }) => e.response?.location ?? '').find((l: string) => l.startsWith('Patient/'));
+        setHapi(`Accepted by HAPI FHIR R4 (HTTP ${r.status}): ${created} of ${bundle.entry.length} resources created or matched.${loc ? ` The stream is now https://hapi.fhir.org/baseR4/${loc.split('/_history')[0]}` : ''}`);
       } else setHapi(`Server answered HTTP ${r.status}: ${(j.issue?.[0]?.diagnostics ?? '').slice(0, 220)}`);
     } catch (e) {
       setHapi(`Could not reach the public test server (${(e as Error).message}). The Bundle can still be downloaded.`);
