@@ -1,4 +1,4 @@
-import { Bell, ClipboardList, Info, LayoutDashboard, Moon, Printer, Search, Settings as SettingsIcon, Siren, Sun, Trophy } from 'lucide-react';
+import { Bell, ChevronRight, ClipboardList, HeartPulse, LayoutDashboard, LifeBuoy, Moon, Printer, Search, Settings as SettingsIcon, Siren, Sun, Trophy } from 'lucide-react';
 import { useState } from 'react';
 import { STATE_RANK, stateOf } from './domain/engine';
 import { unreadFor } from './domain/world';
@@ -74,7 +74,9 @@ export default function App() {
           <span>
             <b>StreamChart</b>
             <small>
-              Stream records <i /> Live
+              AI stream records <span className="pro">
+                <i /> Pro
+              </span>
             </small>
           </span>
         </a>
@@ -83,11 +85,11 @@ export default function App() {
           {link('/ward', 'Ward room', <ClipboardList />, urgent ? <span className="count hot">{urgent}</span> : undefined)}
           {link('/inbox', 'Inbox', <Bell />, unread ? <span className="count">{unread}</span> : undefined)}
           {link('/simulation', 'Emergency scene', <Siren />)}
-          {link('/cup', 'Stream Cup', <Trophy />)}
-          {link('/kit', 'Signs & school kit', <Printer />)}
-          <div className="label" style={{ marginTop: 8 }}>Administration</div>
-          {link('/settings', 'Settings & AI key', <SettingsIcon />)}
-          {link('/about', 'Honesty & sources', <Info />)}
+          {link('/cup', 'Stream Cup', <Trophy />, <ChevronRight className="chev" />)}
+          {link('/kit', 'Signs & school kit', <Printer />, <ChevronRight className="chev" />)}
+          <div className="navsep" />
+          {link('/settings', 'Administration', <SettingsIcon />, <ChevronRight className="chev" />)}
+          {link('/about', 'Support & honesty', <LifeBuoy />)}
         </nav>
         <div className="spacer" />
         <div className="label">Language level</div>
@@ -114,7 +116,10 @@ export default function App() {
             <input placeholder="Find a stream…" value={q} onChange={(e) => doSearch(e.target.value)} aria-label="Find a stream" />
           </label>
           <span className="grow" />
-          <span className="pill demo">Demonstration data · real photos, AI & weather</span>
+          <span className="pill demo">Demonstration data</span>
+          <span className="pill city">
+            <i /> Toulouse Métropole <ChevronRight size={12} style={{ transform: 'rotate(90deg)' }} />
+          </span>
           <label className="persona">
             <span className="dotp" />
             <select value={settings.persona} onChange={(e) => setSettings({ persona: e.target.value as Persona })} aria-label="Viewing as">
@@ -131,6 +136,12 @@ export default function App() {
           </a>
           <a className="iconbtn" href="#/settings" aria-label="Settings">
             <SettingsIcon size={15} />
+          </a>
+          <a className="newbtn" href="#/stream/trois-ponts/checkup">
+            <span className="nb-ico">
+              <HeartPulse size={13} />
+            </span>
+            New check-up
           </a>
         </header>
         <main className="page">{page}</main>

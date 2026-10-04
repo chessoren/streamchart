@@ -36,6 +36,7 @@ export function MapPage() {
       <div className="title-row">
         <h1>Patients</h1>
         <span className="pill live">Live data</span>
+        <span className="muted small hide-sm">{rows.length} streams, {waiting} are waiting for someone.</span>
         <span className="grow" />
         <button className="btn cta" onClick={() => go('/stream/trois-ponts/checkup')}>
           <HeartPulse /> Take a pulse
@@ -47,34 +48,6 @@ export function MapPage() {
         <Kpi title="Check-ups this week" value={String(week)} icon={<Users color="#E08A1E" />} trend={week >= prevWeek ? <><span className="up"><ArrowUp size={11} /> {week - prevWeek}</span> vs last week</> : <><span className="down"><ArrowDown size={11} /> {prevWeek - week}</span> vs last week</>} />
         <Kpi title="Solid information" value={`${allGrades.length ? Math.round((strong / allGrades.length) * 100) : 0}%`} icon={<ShieldCheck color="#22A06B" />} trend={<>of findings are grade A or B</>} />
         <Kpi title="Open care plans" value={String(openPlans)} icon={<ClipboardCheck color="#E5484D" />} trend={<><span className="down">{toSign} to sign</span> · {remissions} remission{remissions > 1 ? 's' : ''}</>} />
-      </div>
-
-      <div className="grid2" style={{ gridTemplateColumns: '1.55fr 1fr', alignItems: 'stretch' }}>
-        <div className="card col" style={{ gap: 10 }}>
-          <div className="row between">
-            <h2>{rows.length} streams, {waiting} are waiting for someone.</h2>
-            <span className="tiny faint">Tap a stream to open its chart</span>
-          </div>
-          <CityMap world={world} onPick={(id) => go(`/stream/${id}`)} />
-        </div>
-        <div className="card col" style={{ gap: 6 }}>
-          <h2>Waiting for someone</h2>
-          <p className="small muted">No visit for more than two weeks. Nobody is to blame — somebody just needs to pass by.</p>
-          <div className="rowlist" style={{ marginTop: 4 }}>
-            {rows
-              .filter((r) => r.st === 'unfollowed')
-              .map(({ s, d }) => (
-                <a key={s.id} href={`#/stream/${s.id}`} className="rowitem">
-                  <img className="thumb" src={s.photo} alt="" style={{ filter: 'grayscale(0.9)', width: 38, height: 38 }} />
-                  <div className="grow">
-                    <div style={{ fontWeight: 600, color: 'var(--ink)' }}>{s.name}</div>
-                    <div className="tiny muted">“{d === null ? 'Nobody has ever looked at me.' : `Nobody has looked at me for ${d} days.`}”</div>
-                  </div>
-                  <span className="btn small">Take its pulse</span>
-                </a>
-              ))}
-          </div>
-        </div>
       </div>
 
         <div className="card" style={{ padding: '12px 12px 6px' }}>
@@ -97,6 +70,7 @@ export function MapPage() {
           <table className="table">
             <thead>
               <tr>
+                <th className="cb hide-sm"><span /></th>
                 <th>Stream ID</th>
                 <th>Stream</th>
                 <th className="hide-sm">Reach</th>
@@ -109,6 +83,7 @@ export function MapPage() {
             <tbody>
               {shown.map(({ s, st, d, grade, n }) => (
                 <tr key={s.id} style={{ cursor: 'pointer' }} onClick={() => go(`/stream/${s.id}`)}>
+                  <td className="cb hide-sm" onClick={(e) => e.stopPropagation()}><span /></td>
                   <td className="id">
                     <b>{streamCode(s.id)}</b>
                     <small>{n} check-up{n === 1 ? '' : 's'}</small>
@@ -138,6 +113,35 @@ export function MapPage() {
             </tbody>
           </table>
         </div>
+
+      <div className="grid2" style={{ gridTemplateColumns: '1.55fr 1fr', alignItems: 'stretch' }}>
+        <div className="card col" style={{ gap: 10 }}>
+          <div className="row between">
+            <h2>{rows.length} streams, {waiting} are waiting for someone.</h2>
+            <span className="tiny faint">Tap a stream to open its chart</span>
+          </div>
+          <CityMap world={world} onPick={(id) => go(`/stream/${id}`)} />
+        </div>
+        <div className="card col" style={{ gap: 6 }}>
+          <h2>Waiting for someone</h2>
+          <p className="small muted">No visit for more than two weeks. Nobody is to blame — somebody just needs to pass by.</p>
+          <div className="rowlist" style={{ marginTop: 4 }}>
+            {rows
+              .filter((r) => r.st === 'unfollowed')
+              .map(({ s, d }) => (
+                <a key={s.id} href={`#/stream/${s.id}`} className="rowitem">
+                  <img className="thumb" src={s.photo} alt="" style={{ filter: 'grayscale(0.9)', width: 38, height: 38 }} />
+                  <div className="grow">
+                    <div style={{ fontWeight: 600, color: 'var(--ink)' }}>{s.name}</div>
+                    <div className="tiny muted">“{d === null ? 'Nobody has ever looked at me.' : `Nobody has looked at me for ${d} days.`}”</div>
+                  </div>
+                  <span className="btn small">Take its pulse</span>
+                </a>
+              ))}
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
