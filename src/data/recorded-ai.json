@@ -1,0 +1,570 @@
+{
+  "clear-riffles.jpg": {
+    "model": "gemini-3.5-flash-lite",
+    "at": "2026-10-04T21:44:01.690Z",
+    "raw": {
+      "fields": {
+        "clarity": {
+          "value": "clear",
+          "confidence": 0.8,
+          "note": "The water allows visibility of the stream bed in shallower sections."
+        },
+        "foam": {
+          "value": "some",
+          "confidence": 0.85,
+          "note": "Turbulence over rocks creates patches of white water and minor foam."
+        },
+        "odour": {
+          "value": "unsure",
+          "confidence": 1,
+          "note": "Olfactory assessments cannot be performed from photographs."
+        },
+        "flow": {
+          "value": "flowing",
+          "confidence": 0.95,
+          "note": "Surface movement and white water indicate active downstream current."
+        },
+        "banks": {
+          "value": "artificial",
+          "confidence": 0.9,
+          "note": "Large stacked stone wall reinforcement is visible on the left bank."
+        },
+        "vegetation": {
+          "value": "sparse",
+          "confidence": 0.85,
+          "note": "Banks feature scattered bare trees and minimal ground vegetation."
+        },
+        "litter": {
+          "value": "none",
+          "confidence": 0.75,
+          "note": "No obvious anthropogenic waste or packaging materials are visible."
+        }
+      },
+      "observations": [
+        {
+          "text": "Stones stacked as a structural retaining wall on the left bank",
+          "box": [
+            0,
+            0,
+            474,
+            321
+          ],
+          "field": "banks"
+        },
+        {
+          "text": "Submerged woody debris trapped between rocks in the stream channel",
+          "box": [
+            435,
+            532,
+            532,
+            680
+          ],
+          "field": "litter"
+        },
+        {
+          "text": "Turbulent white water forming over rocky outcrops",
+          "box": [
+            742,
+            343,
+            998,
+            775
+          ],
+          "field": "foam"
+        },
+        {
+          "text": "Sparse trees and exposed soil along the right bank slope",
+          "box": [
+            0,
+            482,
+            355,
+            998
+          ],
+          "field": "vegetation"
+        }
+      ],
+      "summary": "The urban stream shows clear flowing water with artificial stone reinforcement on one bank and sparse vegetation along the slopes."
+    }
+  },
+  "cloudy-film.jpg": {
+    "model": "gemini-3.5-flash-lite",
+    "at": "2026-10-04T21:44:04.332Z",
+    "raw": {
+      "fields": {
+        "clarity": {
+          "value": "cloudy",
+          "confidence": 0.8,
+          "note": "Water appears turbid or slightly murky."
+        },
+        "foam": {
+          "value": "none",
+          "confidence": 0.9,
+          "note": "No noticeable foam on the water surface."
+        },
+        "odour": {
+          "value": "unsure",
+          "confidence": 1,
+          "note": "Odour cannot be determined from a photograph."
+        },
+        "flow": {
+          "value": "flowing",
+          "confidence": 0.8,
+          "note": "Ripples and surface movement indicate active water flow."
+        },
+        "banks": {
+          "value": "natural",
+          "confidence": 0.9,
+          "note": "Earth and soil banks lined with trees and bushes."
+        },
+        "vegetation": {
+          "value": "dense",
+          "confidence": 0.95,
+          "note": "Heavy foliage and trees cover both sides of the stream."
+        },
+        "litter": {
+          "value": "none",
+          "confidence": 0.7,
+          "note": "No visible litter in the stream bed or banks."
+        }
+      },
+      "observations": [
+        {
+          "text": "Stones and pebbles visible in shallow stream bed",
+          "box": [
+            738,
+            258,
+            903,
+            495
+          ],
+          "field": "clarity"
+        },
+        {
+          "text": "Overhanging branches arching across the waterway",
+          "box": [
+            2,
+            0,
+            616,
+            553
+          ],
+          "field": "vegetation"
+        }
+      ],
+      "summary": "A densely vegetated natural stream with flowing cloudy water and no visible litter or foam."
+    }
+  },
+  "eroded-bank.jpg": {
+    "model": "gemini-3.5-flash-lite",
+    "at": "2026-10-04T21:44:07.395Z",
+    "raw": {
+      "fields": {
+        "clarity": {
+          "value": "cloudy",
+          "confidence": 0.8,
+          "note": "The water appears turbid and brownish."
+        },
+        "foam": {
+          "value": "none",
+          "confidence": 0.9,
+          "note": "No noticeable foam is visible on the surface."
+        },
+        "odour": {
+          "value": "unsure",
+          "confidence": 1,
+          "note": "Odour cannot be assessed from a photograph."
+        },
+        "flow": {
+          "value": "flowing",
+          "confidence": 0.8,
+          "note": "Ripples suggest active movement of water."
+        },
+        "banks": {
+          "value": "eroding",
+          "confidence": 0.9,
+          "note": "Noticeable soil collapse is visible on the left bank."
+        },
+        "vegetation": {
+          "value": "dense",
+          "confidence": 0.8,
+          "note": "Abundant grass and green plants line the stream."
+        },
+        "litter": {
+          "value": "none",
+          "confidence": 0.8,
+          "note": "No obvious man-made litter is observed."
+        }
+      },
+      "observations": [
+        {
+          "text": "Distinct bank erosion and soil collapse.",
+          "box": [
+            421,
+            376,
+            506,
+            477
+          ],
+          "field": "banks"
+        },
+        {
+          "text": "Small rock or debris in the stream bed.",
+          "box": [
+            662,
+            542,
+            730,
+            613
+          ],
+          "field": "litter"
+        }
+      ],
+      "summary": "The photo shows a small stream with cloudy water, eroding banks, and dense surrounding vegetation."
+    }
+  },
+  "foam-stone.jpg": {
+    "model": "gemini-3.5-flash-lite",
+    "at": "2026-10-04T21:44:10.475Z",
+    "raw": {
+      "fields": {
+        "clarity": {
+          "value": "unsure",
+          "confidence": 0.3,
+          "note": "Surface is completely covered by thick foam, making water clarity impossible to determine."
+        },
+        "foam": {
+          "value": "persistent",
+          "confidence": 0.95,
+          "note": "Extensive, dense layer of yellowish-green persistent foam covering the entire water surface."
+        },
+        "odour": {
+          "value": "unsure",
+          "confidence": 1,
+          "note": "Odour cannot be assessed from a photograph."
+        },
+        "flow": {
+          "value": "unsure",
+          "confidence": 0.4,
+          "note": "Flow rate is obscured by the thick surface foam layer."
+        },
+        "banks": {
+          "value": "artificial",
+          "confidence": 0.9,
+          "note": "Concrete or man-made structures visible along the top and bottom edges."
+        },
+        "vegetation": {
+          "value": "absent",
+          "confidence": 0.7,
+          "note": "No aquatic or bank vegetation is visible except minor moss on concrete structures."
+        },
+        "litter": {
+          "value": "none",
+          "confidence": 0.6,
+          "note": "No distinct litter is visible among the foam and concrete."
+        }
+      },
+      "observations": [
+        {
+          "text": "Man-made concrete retaining wall framing the water body.",
+          "box": [
+            0,
+            500,
+            237,
+            997
+          ],
+          "field": "banks"
+        },
+        {
+          "text": "Very dense, textured foam layer covering the whole visible water surface.",
+          "box": [
+            1,
+            0,
+            922,
+            999
+          ],
+          "field": "foam"
+        },
+        {
+          "text": "Small patch of moss growing on the concrete edge.",
+          "box": [
+            862,
+            599,
+            1000,
+            989
+          ],
+          "field": "vegetation"
+        },
+        {
+          "text": "Rigid concrete or stone structure jutting into the water.",
+          "box": [
+            198,
+            831,
+            693,
+            1000
+          ],
+          "field": "banks"
+        }
+      ],
+      "summary": "The photo shows a water surface entirely covered by persistent foam, bounded by artificial concrete structures with absent vegetation."
+    }
+  },
+  "litter-bank.jpg": {
+    "model": "gemini-3.5-flash-lite",
+    "at": "2026-10-04T21:44:12.991Z",
+    "raw": {
+      "fields": {
+        "clarity": {
+          "value": "cloudy",
+          "confidence": 0.8,
+          "note": "Water appearance is murky."
+        },
+        "foam": {
+          "value": "none",
+          "confidence": 0.9,
+          "note": "No foam visible."
+        },
+        "odour": {
+          "value": "unsure",
+          "confidence": 1,
+          "note": "Cannot determine odour from a photo."
+        },
+        "flow": {
+          "value": "slow",
+          "confidence": 0.7,
+          "note": "Water appears largely still or slow-moving."
+        },
+        "banks": {
+          "value": "natural",
+          "confidence": 0.9,
+          "note": "Earthy and grassy banks."
+        },
+        "vegetation": {
+          "value": "dense",
+          "confidence": 0.95,
+          "note": "Heavy green growth covering the banks."
+        },
+        "litter": {
+          "value": "lots",
+          "confidence": 0.99,
+          "note": "Extensive accumulation of plastic bottles and containers."
+        }
+      },
+      "observations": [
+        {
+          "text": "Plastic takeout containers trapped in the stream",
+          "box": [
+            503,
+            178,
+            626,
+            340
+          ],
+          "field": "litter"
+        },
+        {
+          "text": "Accumulation of plastic bottles",
+          "box": [
+            844,
+            432,
+            983,
+            574
+          ],
+          "field": "litter"
+        }
+      ],
+      "summary": "The stream features dense green banks and slow-moving water heavily impacted by discarded plastic bottles and containers."
+    }
+  },
+  "sausse-banks.jpg": {
+    "model": "gemini-3.5-flash-lite",
+    "at": "2026-10-04T21:44:15.787Z",
+    "raw": {
+      "fields": {
+        "clarity": {
+          "value": "unsure",
+          "confidence": 0.3,
+          "note": "Water body is too distant in the photo to determine clarity."
+        },
+        "foam": {
+          "value": "unsure",
+          "confidence": 0.3,
+          "note": "Water surface is not close enough to check for foam."
+        },
+        "odour": {
+          "value": "unsure",
+          "confidence": 1,
+          "note": "Photos cannot capture odours."
+        },
+        "flow": {
+          "value": "unsure",
+          "confidence": 0.3,
+          "note": "Cannot determine water movement from this distance."
+        },
+        "banks": {
+          "value": "natural",
+          "confidence": 0.6,
+          "note": "Banks appear to consist of natural soil and vegetation."
+        },
+        "vegetation": {
+          "value": "sparse",
+          "confidence": 0.5,
+          "note": "Vegetation along the banks and surrounding area appears sparse."
+        },
+        "litter": {
+          "value": "none",
+          "confidence": 0.6,
+          "note": "No obvious litter is visible in the visible foreground or banks."
+        }
+      },
+      "observations": [
+        {
+          "text": "Distant water body visible on the horizon.",
+          "box": [
+            367,
+            169,
+            401,
+            644
+          ],
+          "field": "clarity"
+        },
+        {
+          "text": "Natural earthen bank configuration.",
+          "box": [
+            390,
+            715,
+            426,
+            999
+          ],
+          "field": "banks"
+        }
+      ],
+      "summary": "An open landscape featuring a dirt path alongside a plowed field with a distant water body visible on the horizon."
+    }
+  },
+  "stagnant-arm.jpg": {
+    "model": "gemini-3.5-flash-lite",
+    "at": "2026-10-04T21:44:18.264Z",
+    "raw": {
+      "fields": {
+        "clarity": {
+          "value": "cloudy",
+          "confidence": 0.8,
+          "note": "Water appears turbid and opaque."
+        },
+        "foam": {
+          "value": "none",
+          "confidence": 0.9,
+          "note": "No noticeable foam or suds on the water surface."
+        },
+        "odour": {
+          "value": "unsure",
+          "confidence": 1,
+          "note": "Odour cannot be determined from a photograph."
+        },
+        "flow": {
+          "value": "flowing",
+          "confidence": 0.7,
+          "note": "Ripples suggest movement, though slow."
+        },
+        "banks": {
+          "value": "natural",
+          "confidence": 0.8,
+          "note": "Earth and soil banks lining the stream."
+        },
+        "vegetation": {
+          "value": "sparse",
+          "confidence": 0.8,
+          "note": "Scattered grasses and weeds along the banks."
+        },
+        "litter": {
+          "value": "none",
+          "confidence": 0.7,
+          "note": "No obvious trash or debris visible."
+        }
+      },
+      "observations": [
+        {
+          "text": "Tree trunk near the center channel",
+          "box": [
+            0,
+            492,
+            303,
+            558
+          ],
+          "field": "banks"
+        },
+        {
+          "text": "Dense trees on the upper left bank",
+          "box": [
+            0,
+            0,
+            273,
+            493
+          ],
+          "field": "vegetation"
+        }
+      ],
+      "summary": "The photo shows a cloudy stream flowing between natural earthen banks with sparse vegetation."
+    }
+  },
+  "three-bridges.jpg": {
+    "model": "gemini-3.5-flash-lite",
+    "at": "2026-10-04T21:44:20.727Z",
+    "raw": {
+      "fields": {
+        "clarity": {
+          "value": "cloudy",
+          "confidence": 0.6,
+          "note": "Water appears murky inside the culvert entrance."
+        },
+        "foam": {
+          "value": "none",
+          "confidence": 0.8,
+          "note": "No visible foam or bubbles detected on the surface."
+        },
+        "odour": {
+          "value": "unsure",
+          "confidence": 1,
+          "note": "Odour cannot be determined from a photograph."
+        },
+        "flow": {
+          "value": "slow",
+          "confidence": 0.5,
+          "note": "Water surface is calm and smooth with little visible movement."
+        },
+        "banks": {
+          "value": "natural",
+          "confidence": 0.7,
+          "note": "Sloping earthen banks surrounding the brick culvert arch."
+        },
+        "vegetation": {
+          "value": "dense",
+          "confidence": 0.9,
+          "note": "Surrounded by heavy trees, shrubs, and undergrowth."
+        },
+        "litter": {
+          "value": "none",
+          "confidence": 0.7,
+          "note": "No obvious trash or debris visible in or near the water."
+        }
+      },
+      "observations": [
+        {
+          "text": "Brick arch structure enclosing the stream",
+          "box": [
+            458,
+            321,
+            742,
+            654
+          ],
+          "field": "banks"
+        },
+        {
+          "text": "Dense overhead tree canopy",
+          "box": [
+            0,
+            0,
+            269,
+            421
+          ],
+          "field": "vegetation"
+        }
+      ],
+      "summary": "This urban stream enters a brick culvert surrounded by dense vegetation and natural earthen banks under a heavy canopy."
+    }
+  }
+}
