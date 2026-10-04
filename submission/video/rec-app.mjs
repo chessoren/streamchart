@@ -14,8 +14,8 @@ const clips = {
   // 1. Mathis's 60-second check-up, sealed AI reveal, effect
   checkup: { url: B, prep: fresh, run: async (p) => {
     await W(p, 2200);
-    await moveTo(p, '.rowitem:has-text("Trois Ponts brook")'); await W(p, 700);
-    await clickH(p, '.rowitem:has-text("Trois Ponts brook")'); await W(p, 2600);
+    await moveTo(p, 'tr:has-text("Trois Ponts brook")'); await W(p, 700);
+    await clickH(p, 'tr:has-text("Trois Ponts brook")'); await W(p, 2600);
     await clickH(p, 'button:has-text("Take the pulse")'); await W(p, 2600);
     await clickH(p, "text=I'm on the bank"); await W(p, 1200);
     await clickH(p, '.samples button >> nth=0'); await W(p, 2200);

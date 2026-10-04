@@ -41,7 +41,7 @@ Live app — <a href="https://streamchart-oneaquahealth.netlify.app">https://str
 Source code — <a href="https://github.com/chessoren/streamchart">https://github.com/chessoren/streamchart</a><br>
 Emergency scene — <a href="https://streamchart-oneaquahealth.netlify.app/#/simulation">https://streamchart-oneaquahealth.netlify.app/#/simulation</a><br>
 A stream on the public HAPI FHIR R4 server — <a href="https://hapi.fhir.org/baseR4/Patient/81129">https://hapi.fhir.org/baseR4/Patient/81129</a><br>
-Demo video — StreamChart-demo.mp4 (4 min 28 s, English subtitles)</div>
+Demo video — StreamChart-demo.mp4 (4 min 24 s, English subtitles)</div>
 <h2 class="pb">About the project</h2>
 {about_html}
 <h2 class="pb">Pitch deck</h2>

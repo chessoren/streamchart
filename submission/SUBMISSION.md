@@ -51,7 +51,7 @@ See **ABOUT.md** (about 5,000 words, in Devpost markdown: Inspiration / What it 
 - Demo video: *(your YouTube link once uploaded)*
 
 ## Video
-- File: `video/StreamChart-demo.mp4` (1920×1080, 30 fps, H.264/AAC, 4 min 28 s, English subtitles burned in, narration in Oren's voice cloned with Fish Audio s2.1-pro-free, original score synthesized for the video).
+- File: `video/StreamChart-demo.mp4` (1920×1080, 30 fps, H.264/AAC, 4 min 24 s, English subtitles burned in, narration in Oren's voice cloned with Fish Audio s2.1-pro-free, original score synthesized for the video).
 - Suggested YouTube title: **StreamChart — Every patient has a chart. Now every stream does. | OneAquaHealth IEEE Hackathon 2026**
 - Suggested YouTube description:
 
@@ -61,10 +61,10 @@ See **ABOUT.md** (about 5,000 words, in Devpost markdown: Inspiration / What it 
 > 0:21 The problem with citizen science
 > 0:44 The insight: medicine solved this a century ago
 > 1:06 The 60-second check-up and the sealed AI second look
-> 2:02 The stream's chart: grades, hypothesis, care plan
-> 2:29 A week in 60 seconds (labelled simulation, real engine)
-> 3:35 The loop closes: the reply and the stream's voice
-> 3:57 HL7 FHIR R4, signs and school kit
+> 1:58 The stream's chart: grades, hypothesis, care plan
+> 2:26 A week in 60 seconds (labelled simulation, real engine)
+> 3:32 The loop closes: the reply and the stream's voice
+> 3:53 HL7 FHIR R4, signs and school kit
 >
 > Live app: https://streamchart-oneaquahealth.netlify.app
 > Code: https://github.com/chessoren/streamchart
